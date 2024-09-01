@@ -1,6 +1,6 @@
 # AI-Hotkeys
 
-Transform your CapsLock into an AI key! This AutoHotkey app puts powerful AI capabilities right at your fingertips, supercharging your Windows workflow with instant AI assistance for writing, research, translation, and more. Boost your productivity with just a few keystrokes! 🚀🧠⌨️
+Transform your CapsLock into an AI key! This AutoHotkey app puts powerful AI capabilities right at your fingertips, supercharging your Windows workflow with instant AI assistance for writing, research, translation, and more. Boost your productivity with just a few keystrokes! 🚀
 
 ## Overview
 
@@ -52,6 +52,7 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) and [DeepL
 
 1. **Download and Run the Standalone Executable :**
    - Head over to the [releases on GitHub](https://github.com/WolframRavenwolf/AI-Hotkeys/releases) and download the latest `.exe` file.
+     - Direct link to the latest release: [**AI-Hotkeys.exe**](https://github.com/WolframRavenwolf/AI-Hotkeys/releases/latest/download/AI-Hotkeys.exe)
    - Run the `.exe` without needing to install anything.
    - To have the app start automatically on login, place the `.exe` file (or a shortcut to it) in your Autostart folder:
      - Open File Explorer and type `shell:startup` into the address bar, then press Enter.
@@ -86,25 +87,31 @@ While the various prompts are optimized for their respective tasks, they can be 
 
 ### CapsLock Hotkeys
 
+🇺🇸 English Default Hotkeys:
+
 ![AI-Hotkeys](AI-Hotkeys.png)
 
-| Hotkey         | Action                        |
-| -------------- | ----------------------------- |
-| CapsLock + A   | Answer                        |
-| CapsLock + B   | Calculate/Convert             |
-| CapsLock + C   | Check correctness             |
-| CapsLock + D   | Define                        |
-| CapsLock + E   | Explain                       |
-| CapsLock + F   | Formulate better              |
-| CapsLock + G   | Check grammar, spelling, etc. |
-| CapsLock + Q   | Query                         |
-| CapsLock + R   | Research                      |
-| CapsLock + S   | Summarize                     |
-| CapsLock + T   | Translate                     |
-| CapsLock + V   | Clarify/Simplify              |
-| CapsLock + W   | What is                       |
-| CapsLock + X   | Reject                        |
-| CapsLock + Y/Z | Accept                        |
+🇩🇪 German Default Hotkeys:
+
+![AI-Hotkeys-de](AI-Hotkeys-de.png)
+
+| Hotkey         | 🇺🇸 Action                      | 🇩🇪 Aktion                              |
+| -------------- | ----------------------------- | ------------------------------------- |
+| CapsLock + A   | Answer                        | Verfasse eine Antwort                 |
+| CapsLock + B   | Calculate/Convert             | Berechne/Konvertiere                  |
+| CapsLock + C   | Check correctness             | Prüfe Richtigkeit                     |
+| CapsLock + D   | Define                        | Definiere                             |
+| CapsLock + E   | Explain                       | Erkläre                               |
+| CapsLock + F   | Formulate better              | Formuliere besser                     |
+| CapsLock + G   | Check grammar, spelling, etc. | Prüfe Grammatik, Rechtschreibung usw. |
+| CapsLock + Q   | Query                         | Anfrage                               |
+| CapsLock + R   | Research                      | Recherchiere                          |
+| CapsLock + S   | Summarize                     | Fasse zusammen                        |
+| CapsLock + T   | Translate                     | Übersetze                             |
+| CapsLock + V   | Clarify/Simplify              | Verdeutliche/Vereinfache              |
+| CapsLock + W   | What is                       | Was ist                               |
+| CapsLock + X   | Reject                        | Verfasse eine Absage                  |
+| CapsLock + Y/Z | Accept                        | Verfasse eine Zusage                  |
 
 These shortcuts make it easy to access AI assistance for various tasks throughout your Windows environment. Remember the shortcuts work everywhere in Windows, so you can use them in any application, including web and file browsers, text editors, office software, email clients, chat programs, and more.
 
@@ -143,14 +150,14 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
 
 ### Win Hotkeys
 
-| Hotkey         | Action                              |
-| -------------- | ----------------------------------- |
-| Win + Q        | Query Perplexity                    |
-| Win + Ctrl + Q | Take Screenshot (PrintScreen Alias) |
-| Win + B        | Search Dictionary                   |
-| Win + G        | Search Google                       |
-| Win + T        | Translate with DeepL                |
-| Win + W        | Search Wikipedia or open URL        |
+| Hotkey         | 🇺🇸 Action                            | 🇩🇪 Aktion                           |
+| -------------- | ----------------------------------- | ---------------------------------- |
+| Win + Q        | Query Perplexity                    | Perplexity-Anfrage                 |
+| Win + Ctrl + Q | Take Screenshot (PrintScreen Alias) | Bildschirmfoto (PrintScreen-Alias) |
+| Win + B        | Search Dictionary (Merriam-Webster) | Wörterbuch-Suche (Duden)           |
+| Win + G        | Search Google                       | Google-Suche                       |
+| Win + T        | Translate with DeepL                | DeepL-Übersetzer                   |
+| Win + W        | Search Wikipedia or open URL        | Wikipedia-Suche oder URL öffnen    |
 
 - **Query Perplexity (Win + Q):** Opens Perplexity and focuses the text input area, without sending anything automatically. This is useful when you want to:
 
