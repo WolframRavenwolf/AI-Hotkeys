@@ -1,5 +1,5 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.0.0.20240901 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.1.0.20240922 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
 
 ; This program is free software: you can redistribute it and/or modify
@@ -55,6 +55,8 @@ global REJECT1 := "Compose a negative response/rejection to the following text"
 global REJECT2 := "Answer in my name. Maintain the language and level of formality. Write only the rejection, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global ACCEPT1 := "Compose an affirmative response/acceptance to the following text"
 global ACCEPT2 := "Answer in my name. Maintain the language and level of formality. Write only the acceptance, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global PREFIX := ""
+global SUFFIX := ""
 
 ; ------------------------------------------------------------------------------
 ; Default (English) URLs
@@ -105,6 +107,8 @@ global REJECT1 := "Verfasse eine verneinende/ablehnende Antwort/Absage auf folge
 global REJECT2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global ACCEPT1 := "Verfasse eine bejahende/zustimmende Antwort/Zusage auf folgenden Text"
 global ACCEPT2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global PREFIX := ""
+global SUFFIX := ""
 
 ; ------------------------------------------------------------------------------
 ; Default (German) URLs
@@ -131,6 +135,7 @@ global URL_WIKIPEDIA_SEARCH := "https://de.wikipedia.org/w/index.php?search="
 global CapsLockHotkeys := true
 global WinHotkeys := true
 global ClipboardEditor := true
+global Pro := true
 
 ; ------------------------------------------------------------------------------
 ; Load custom variables if an INI file exists in My Documents or in Script Dir
@@ -217,7 +222,10 @@ LoadCustomVariables() {
             {
                 key := parts1
                 value := parts2
-                %key% := value
+                if (value = "0" || value = "false")
+                    %key% := false
+                else
+                    %key% := value
             }
         }
     }
@@ -274,9 +282,14 @@ AI(Task := "", WritingInstructions := "")
 
     if (Clipboard)
     {
+        prompt := ""
+
+        if (PREFIX != "")
+            prompt .= PREFIX . "`n`n"
+
         if (Task)
         {
-            prompt := Task . ":`n`n"
+            prompt .= Task . ":`n`n"
             if (WritingInstructions)
                 prompt .= "<text>`n"
             prompt .= Clipboard
@@ -284,12 +297,20 @@ AI(Task := "", WritingInstructions := "")
                 prompt .= "`n</text>`n`n" . WritingInstructions
         }
         else
-            prompt := Clipboard
+            prompt .= Clipboard
+
+        if (SUFFIX != "")
+            prompt .= "`n`n" . SUFFIX
 
         url .= "search?"
+
         if (WritingInstructions)
             url .= "focus=writing&"
-        url .= "pro=true&q=" . UrlEncode(prompt)
+
+        if (Pro = "1" || Pro = "true" || (Pro = "auto" && WritingInstructions = ""))
+            url .= "pro=true&"
+
+        url .= "q=" . UrlEncode(prompt)
     }
 
     Clipboard := ClipboardOld
@@ -352,7 +373,7 @@ Search(Engine)
 ; CapsLock Hotkeys
 ; ==============================================================================
 
-#If (CapsLockHotkeys && CapsLockHotkeys != "false")
+#If (CapsLockHotkeys)
 
 ; ----------------------------------------------------------------------------------------------------
 ; CapsLock Behavior
@@ -426,7 +447,7 @@ SC03A & z::AI(ACCEPT1, ACCEPT2)
 ; Win Hotkeys
 ; ==============================================================================
 
-#If (WinHotkeys && WinHotkeys != "false")
+#If (WinHotkeys)
 
 ; ------------------------------------------------------------------------------
 ; Perplexity
@@ -465,7 +486,7 @@ SC03A & z::AI(ACCEPT1, ACCEPT2)
 ; Clipboard Editor
 ; ==============================================================================
 
-#If (ClipboardEditor && ClipboardEditor != "false")
+#If (ClipboardEditor)
 
 ; ------------------------------------------------------------------------------
 ; Alt+LWin / Win+LAlt = Clipboard Editor

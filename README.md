@@ -207,6 +207,21 @@ To make changes, simply copy the file to your Documents folder and edit it there
 
 For German-speaking users, a localized version called `AI-Hotkeys-de.ini` is also available. On German Windows systems, this file will be automatically loaded when placed in your Documents folder or in the same directory as the executable.
 
+### Pro Setting
+
+The `Pro` setting in the INI file controls how the app interacts with Perplexity's Pro features:
+
+- `Pro=true` (default): Always uses Pro search for all queries.
+- `Pro=auto`: Automatically determines whether to use Pro search based on the task, helping to conserve Pro searches for non-subscribers.
+- `Pro=false`: Never uses Pro search, suitable for non-subscribers or those who want to avoid using Pro searches automatically.
+
+This setting is particularly useful for non-Pro subscribers who want to limit their Pro search usage. You can adjust this in the `[Settings]` section of your INI file:
+
+```ini
+[Settings]
+Pro=auto  ; or true/false
+```
+
 ## A Personal Note
 
 Since developing **AI-Hotkeys**, I've been using it extensively in my daily workflow and have found it to be an incredibly valuable tool. I'm sharing it with you all in the hope that it might prove as beneficial to you as it has been to me.
