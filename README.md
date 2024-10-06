@@ -24,7 +24,7 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) and [DeepL
 
 - **Clipboard Editor:** Edit clipboard content with a sleek GUI, supporting both light and dark themes.
 
-  This is an optional, slightly more advanced feature that allows you to view and edit the clipboard content before sending it to Perplexity or DeepL.
+   This powerful tool enables you to preview and modify clipboard content before transmitting it to Perplexity. It offers a user-friendly interface for refining your text or query prior to AI processing, while also displaying all available hotkeys within the GUI for quick reference.
 
 - **Customization:** Fully customizable through simple edits to a plaintext configuration file, allowing you to adapt all tasks and instructions to your preferences or language.
 
@@ -187,17 +187,19 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
 
 ### Clipboard Editor
 
-The **Clipboard Editor (Alt + LWin / Win + LAlt)** is an optional, slightly more advanced feature that allows you to view and edit the clipboard content before sending it to Perplexity or DeepL. This lightweight popup window is particularly useful when you want to compose your own query without switching to your browser or between applications. Its unobtrusive design ensures it doesn't interfere with your work, making it an efficient tool for seamless text manipulation and input.
+The Clipboard Editor can be accessed using the following hotkey:
 
-While active, the following hotkeys are available to control its functionality:
+- **Alt + LWin** or **Win + LAlt**: Open/Close Clipboard Editor
 
-- **Open/Close Clipboard Editor:** `Alt + LWin` or `Win + LAlt`
-- **Save:** `Alt + S` or `Alt + Enter`
-- **Clear:** `Alt + C` or `Alt + Backspace` or `Alt + Delete`
-- **Restore:** `Alt + R` or `Alt + Insert`
-- **Exit:** `Alt + E` or `Alt + X` or `Esc`
-- **Query (Perplexity):** `Alt + Q` or `Alt + P` or `Ctrl + Enter`
-- **Translate (DeepL):** `Alt + T` or `Alt + D`
+When the Clipboard Editor is open, you can use the following hotkeys:
+
+- **Alt + LWin** or **Win + LAlt** or **Alt + Enter**: Save
+- **Alt + Delete**: Clear
+- **Alt + Insert**: Restore
+- **Esc**: Exit
+- **Alt + Q** or **Ctrl + Enter**: Query (Perplexity)
+
+The Clipboard Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
 
 ## Customization
 
