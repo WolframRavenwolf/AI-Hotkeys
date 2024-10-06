@@ -1,5 +1,5 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.2.0.20241006 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.2.1.20241007 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
 
 ; This program is free software: you can redistribute it and/or modify
@@ -241,12 +241,18 @@ global URL_WIKIPEDIA_SEARCH := "https://de.wikipedia.org/w/index.php?search="
 
 
 ; ==============================================================================
-; Default Settings
+; Default Settings and Win Hotkeys
 ; ==============================================================================
 
 global CapsLockHotkeys := true
 global ClipboardEditor := true
 global Pro := true
+
+global WinHotkey_Perplexity := "q"
+global WinHotkey_Dictionary := "b"
+global WinHotkey_Google := "g"
+global WinHotkey_Translator := "t"
+global WinHotkey_Wikipedia := "w"
 
 ; ------------------------------------------------------------------------------
 ; Load custom variables if an INI file exists in My Documents or in Script Dir
