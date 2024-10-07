@@ -8,7 +8,7 @@ Transform your CapsLock into an AI key! This AutoHotkey app puts powerful AI cap
 
 Whether you need to compose answers, conduct research, explain concepts, refine text, summarize information, translate content, or verify correctness, this app empowers you by putting powerful AI capabilities right at your fingertips, literally.
 
-With seamless integration to [Perplexity](https://www.perplexity.ai/) and [DeepL](https://www.deepl.com/), it enables you to effortlessly and swiftly solve complex tasks and streamline your workflow like never before.
+With seamless integration to [Perplexity](https://www.perplexity.ai/) (and [DeepL](https://www.deepl.com/)), it enables you to effortlessly and swiftly solve complex tasks and streamline your workflow like never before.
 
 ## Features
 
@@ -28,7 +28,7 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) and [DeepL
 
 - **Customization:** Fully customizable through simple edits to a plaintext configuration file, allowing you to adapt all tasks and instructions to your preferences or language.
 
-  **English** and **German** prompts and URLs are included by default. (If your Windows language is set to German, the German version will automatically load.) Users can customize and translate any content as needed, though this may be unnecessary due to AI's multilingual comprehension capabilities.
+  🇺🇸 **English** and 🇩🇪 **German** prompts and URLs are included by default. (If your Windows language is set to German, the German version will automatically load.) Users can customize and translate any content as needed, though this may be unnecessary due to AI's multilingual comprehension capabilities.
 
 ## System Requirements and Recommendations
 
@@ -40,7 +40,8 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) and [DeepL
 
   - **Perplexity Pro subscription:** While not mandatory (we're only using the website, not their API), it's highly recommended. A [Pro](https://perplexity.ai/pro?referral_code=8UFLPUH0) subscription grants access to much more powerful models (such as my personal favorite, **Claude 3.5 Sonnet**, or **GPT-4o**) and enables file uploads (documents and images). The ability to upload screenshots is particularly useful, as it allows the AI to see what you're looking at or talking about.
 
-    You can use my referral code [**8UFLPUH0**](https://perplexity.ai/pro?referral_code=8UFLPUH0) to get a one-time $10 discount on your subscription.
+    > [!TIP]
+    > **You can use my referral code [`8UFLPUH0`](https://perplexity.ai/pro?referral_code=8UFLPUH0) to get a one-time $10 discount on your subscription.**
 
     Perplexity is definitely worth the investment, especially once you've mastered using it with **AI-Hotkeys**! The combination of powerful AI capabilities and streamlined shortcuts will revolutionize your workflow.
 
@@ -153,7 +154,6 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
 | Hotkey         | 🇺🇸 Action                            | 🇩🇪 Aktion                           |
 | -------------- | ----------------------------------- | ---------------------------------- |
 | Win + Q        | Query Perplexity                    | Perplexity-Anfrage                 |
-| Win + Ctrl + Q | Take Screenshot (PrintScreen Alias) | Bildschirmfoto (PrintScreen-Alias) |
 | Win + B        | Search Dictionary (Merriam-Webster) | Wörterbuch-Suche (Duden)           |
 | Win + G        | Search Google                       | Google-Suche                       |
 | Win + T        | Translate with DeepL                | DeepL-Übersetzer                   |
@@ -168,14 +168,6 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
     - Any other file from your computer that you've copied to your clipboard which can be uploaded by pasting into the input field
 
   This feature gives you control over what and when to submit to Perplexity.
-
-- **Take Screenshot (Win + Ctrl + Q):** This shortcut is a handy alternative to the PrintScreen key, which you should have configured for screenshot capture. Its main benefit is that you don't have to reach across the keyboard. With this setup, you can do everything with one hand:
-
-  - Press **Win + Ctrl + Q** to take a screenshot
-  - Press **Win + Q** to open Perplexity
-  - Press **Ctrl + V** to paste the screenshot
-
-  This method keeps your hand in one place, making the whole process quicker and easier.
 
 - **Search Dictionary (Win + B):** Searches the Merriam-Webster dictionary (or Duden in the German-language version).
 
@@ -201,13 +193,21 @@ When the Clipboard Editor is open, you can use the following hotkeys:
 
 The Clipboard Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
 
+🇺🇸 English Clipboard Editor:
+
+![AI-Hotkeys-ClipboardEditor](AI-Hotkeys-ClipboardEditor.png)
+
+🇩🇪 German Clipboard Editor:
+
+![AI-Hotkeys-ClipboardEditor-de](AI-Hotkeys-ClipboardEditor-de.png)
+
 ## Customization
 
-You can easily customize **AI-Hotkeys** by modifying its configuration file `AI-Hotkeys.ini`. This file allows you to adjust various variables and settings, including prompts and URLs.
+You can easily customize **AI-Hotkeys** by modifying its configuration file `AI-Hotkeys.ini`. This file allows you to adjust various variables and settings, including hotkeys, prompts, and URLs.
 
 To make changes, simply copy the file to your Documents folder and edit it there. Any INI files in your Documents folder will take precedence over those in the app folder.
 
-For German-speaking users, a localized version called `AI-Hotkeys-de.ini` is also available. On German Windows systems, this file will be automatically loaded when placed in your Documents folder or in the same directory as the executable.
+🇩🇪 For German-speaking users, a localized version called `AI-Hotkeys-de.ini` is also available. On German Windows systems, this file will be automatically loaded when placed in your Documents folder or in the same directory as the executable.
 
 ### Pro Setting
 
