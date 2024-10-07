@@ -32,22 +32,22 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) (and [Deep
 
 ## System Requirements and Recommendations
 
-- **Required:**
+### **Required:**
 
-  - **Windows:** Windows 7 or later. Windows 10 or 11 recommended.
+**Windows:** Windows 7 or later. Windows 10 or 11 recommended.
 
-- **Optional:**
+### **Optional:**
 
-  - **Perplexity Pro subscription:** While not mandatory (we're only using the website, not their API), it's highly recommended. A [Pro](https://perplexity.ai/pro?referral_code=8UFLPUH0) subscription grants access to much more powerful models (such as my personal favorite, **Claude 3.5 Sonnet**, or **GPT-4o**) and enables file uploads (documents and images). The ability to upload screenshots is particularly useful, as it allows the AI to see what you're looking at or talking about.
+**Perplexity Pro subscription:** While not mandatory (we're only using the website, not their API), it's highly recommended. A [Pro](https://perplexity.ai/pro?referral_code=8UFLPUH0) subscription grants access to much more powerful models (such as my personal favorite, **Claude 3.5 Sonnet**, or **GPT-4o**) and enables file uploads (documents and images). The ability to upload screenshots is particularly useful, as it allows the AI to see what you're looking at or talking about.
 
-    > [!TIP]
-    > **You can use my referral code [`8UFLPUH0`](https://perplexity.ai/pro?referral_code=8UFLPUH0) to get a one-time $10 discount on your subscription.**
+> [!TIP]
+> **You can use my referral code [`8UFLPUH0`](https://perplexity.ai/pro?referral_code=8UFLPUH0) to get a one-time $10 discount on your subscription.**
 
-    Perplexity is definitely worth the investment, especially once you've mastered using it with **AI-Hotkeys**! The combination of powerful AI capabilities and streamlined shortcuts will revolutionize your workflow.
+Perplexity Pro is definitely worth the investment, especially once you've mastered using it with **AI-Hotkeys**! The combination of powerful AI capabilities and streamlined shortcuts will revolutionize your workflow.
 
-  - **Screenshot software:** For capturing and uploading screenshots to Perplexity (Pro subscription required), which significantly enhances your workflow efficiency, several options are available. While the built-in Windows **Snipping Tool** is adequate, I personally prefer [**Greenshot**](https://getgreenshot.org/) for its advanced features. Whichever tool you choose, configure it to capture a selected area and automatically copy it to the clipboard. This setup enables you to paste the screenshot directly into Perplexity with a single keystroke, substantially streamlining your process.
+**Screenshot software:** For capturing and uploading screenshots to Perplexity (Pro subscription required), which significantly enhances your workflow efficiency, several options are available. While the built-in Windows **Snipping Tool** is adequate, I personally prefer [**Greenshot**](https://getgreenshot.org/) for its advanced features. Whichever tool you choose, configure it to capture a selected area and automatically copy it to the clipboard. For that I prefer the shortcut **Win + Ctrl + Q** for seamless integration with the **AI-Hotkeys** shortcuts, but the Windows default **Win + Shift + S** works as well. This setup enables you to take a screenshot and send it directly to Perplexity with just a few keystrokes, substantially streamlining your process.
 
-  - **OCR software:** For efficient text extraction from images, screenshots, or directly from your screen, I recommend either [**Text Extractor**](https://learn.microsoft.com/en-us/windows/powertoys/text-extractor) (part of [Microsoft PowerToys](https://github.com/microsoft/PowerToys?tab=readme-ov-file)) or [**Capture2Text**](https://capture2text.sourceforge.net/). Both tools can be configured to use the shortcut **Win + Shift + Q** for seamless integration with the **AI-Hotkeys** shortcuts. This setup enables you to grab text from any source and instantly send it to Perplexity with a single keystroke. Note that a Pro subscription is not required for this functionality, as we're only transmitting plain text.
+**OCR software:** For efficient text extraction from images, screenshots, or directly from your screen, I recommend either [**Text Extractor**](https://learn.microsoft.com/en-us/windows/powertoys/text-extractor) (part of [Microsoft PowerToys](https://github.com/microsoft/PowerToys?tab=readme-ov-file)) or [**Capture2Text**](https://capture2text.sourceforge.net/). Both tools can be configured to use the shortcut **Win + Ctrl + Q** for seamless integration with the **AI-Hotkeys** shortcuts. This setup enables you to grab text from any source and instantly send it to Perplexity with a single keystroke. Note that a Pro subscription is not required for this functionality, as we're only transmitting plain text.
 
 ## Installation
 
