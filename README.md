@@ -95,23 +95,23 @@ While the various prompts are optimized for their respective tasks, they can be 
 
 ![AI-Hotkeys-de](AI-Hotkeys-de.png)
 
-| Hotkey         | 🇺🇸 Action                      | 🇩🇪 Aktion                              |
-| -------------- | ----------------------------- | ------------------------------------- |
-| CapsLock + A   | Answer                        | Verfasse eine Antwort                 |
-| CapsLock + B   | Calculate/Convert             | Berechne/Konvertiere                  |
-| CapsLock + C   | Check correctness             | Prüfe Richtigkeit                     |
-| CapsLock + D   | Define                        | Definiere                             |
-| CapsLock + E   | Explain                       | Erkläre                               |
-| CapsLock + F   | Formulate better              | Formuliere besser                     |
-| CapsLock + G   | Check grammar, spelling, etc. | Prüfe Grammatik, Rechtschreibung usw. |
-| CapsLock + Q   | Query                         | Anfrage                               |
-| CapsLock + R   | Research                      | Recherchiere                          |
-| CapsLock + S   | Summarize                     | Fasse zusammen                        |
-| CapsLock + T   | Translate                     | Übersetze                             |
-| CapsLock + V   | Clarify/Simplify              | Verdeutliche/Vereinfache              |
-| CapsLock + W   | What is                       | Was ist                               |
-| CapsLock + X   | Reject                        | Verfasse eine Absage                  |
-| CapsLock + Y/Z | Accept                        | Verfasse eine Zusage                  |
+| Hotkey         | 🇺🇸 Action           | 🇩🇪 Aktion                 |
+| -------------- | ------------------ | ------------------------ |
+| CapsLock + A   | Answer             | Verfasse Antwort         |
+| CapsLock + B   | Calculate/Convert  | Berechne/Konvertiere     |
+| CapsLock + C   | Check correctness  | Prüfe Richtigkeit        |
+| CapsLock + D   | Define             | Definiere                |
+| CapsLock + E   | Explain            | Erkläre                  |
+| CapsLock + F   | Formulate better   | Formuliere besser        |
+| CapsLock + G   | Check grammar etc. | Prüfe Grammatik usw.     |
+| CapsLock + Q   | Query Perplexity…  | Perplexity…              |
+| CapsLock + R   | Research           | Recherchiere             |
+| CapsLock + S   | Summarize          | Fasse zusammen           |
+| CapsLock + T   | Translate          | Übersetze                |
+| CapsLock + V   | Clarify/Simplify   | Verdeutliche/Vereinfache |
+| CapsLock + W   | What is            | Was ist                  |
+| CapsLock + X   | Reject             | Verfasse Absage          |
+| CapsLock + Y/Z | Accept             | Verfasse Zusage          |
 
 These shortcuts make it easy to access AI assistance for various tasks throughout your Windows environment. Remember the shortcuts work everywhere in Windows, so you can use them in any application, including web and file browsers, text editors, office software, email clients, chat programs, and more.
 
@@ -134,7 +134,7 @@ Here's a detailed overview of each shortcut with some tips on how to use them mo
   - **Research (CapsLock + R)** for a detailed report
   - **What is (CapsLock + W)** for a quick answer
 
-- Writing anything important? Use **Clarify (CapsLock + V)** to ask the AI to clarify a sentence, simplify it, or improve it in other ways. Get advice on grammar, spelling, style, tone, and comprehensibility with **Check grammar, spelling, etc. (CapsLock + G)**. Or simply use **Formulate better (CapsLock + F)** if you want to effortlessly improve an entire text at once.
+- Writing anything important? Use **Clarify (CapsLock + V)** to ask the AI to clarify a sentence, simplify it, or improve it in other ways. Get advice on grammar, spelling, style, tone, and comprehensibility with **Check grammar etc. (CapsLock + G)**. Or simply use **Formulate better (CapsLock + F)** if you want to effortlessly improve an entire text at once.
 
   Alternatively, use **DeepL Translate (Win + T)** for even more powerful translation capabilities.
 
@@ -144,7 +144,7 @@ Here's a detailed overview of each shortcut with some tips on how to use them mo
 
 - **What is (CapsLock + W)** is a very versatile shortcut that can be used in many different contexts. Any term or concept you don't know can be looked up with it instantly. But it's not limited to just text, it can also be used to get information about files, URLs, etc. For example, select a file in Windows Explorer (such as an old download with a cryptic name that has long been forgotten in the Downloads folder, or an obscure system file with an unkown purpose) and use **What is** to get information about it. The AI analyzes only the file name and path - the file content is NEVER uploaded or accessed! Despite this limitation, the insights provided are often surprisingly accurate and informative.
 
-- Any other task not covered by the hotkeys above? Use **Query (CapsLock + Q)** to ask Perplexity in your own words, by sending only what text you've selected or the content of your clipboard.
+- Any other task not covered by the hotkeys above? Use **Query Perplexity… (CapsLock + Q)** to ask Perplexity in your own words, by sending only what text you've selected or the content of your clipboard.
 
 Additionally, there are some Windows hotkeys for quick searches and lookups:
 
@@ -197,7 +197,7 @@ When the Clipboard Editor is open, you can use the following hotkeys:
 - **Alt + Delete**: Clear
 - **Alt + Insert**: Restore
 - **Esc**: Exit
-- **Alt + Q** or **Ctrl + Enter**: Query (Perplexity)
+- **Alt + Q** or **Ctrl + Enter**: Query Perplexity…
 
 The Clipboard Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
 

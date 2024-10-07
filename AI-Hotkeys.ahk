@@ -1,5 +1,5 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.2.1.20241007 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.2.2.20241007 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
 
 ; This program is free software: you can redistribute it and/or modify
@@ -64,12 +64,12 @@ global F1 := "Formulate the following text better"
 global F2 := "Improve grammar, spelling, style, tone, and comprehensibility. Maintain the language and level of formality. Write only the improved version, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global FF := "writing"
 
-global G0 := "Check grammar, spelling, etc."
+global G0 := "Check grammar etc."
 global G1 := "Check grammar, spelling, style, tone, and comprehensibility of the following text"
 global G2 := "Provide specific suggestions for improvement and explain them to me. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global GF := "writing"
 
-global Q0 := "Query"
+global Q0 := "Query Perplexity…"
 global Q1 := ""
 global Q2 := ""
 global QF := ""
@@ -142,62 +142,62 @@ if (Language = "de") {
 ; Default (German) Tasks and Writing Instructions
 ; ------------------------------------------------------------------------------
 
-global A0 := "Antwort"
+global A0 := "Verfasse Antwort"
 global A1 := "Verfasse eine Antwort auf folgenden Text"
 global A2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Antwort, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global AF := "writing"
 
-global B0 := "Berechnen/Konvertieren"
+global B0 := "Berechne/Konvertiere"
 global B1 := "Berechne/Konvertiere und erkläre"
 global B2 := ""
 global BF := ""
 
-global C0 := "Richtigkeit prüfen"
+global C0 := "Prüfe Richtigkeit"
 global C1 := "Prüfe die Richtigkeit und begründe deine Einschätzung"
 global C2 := ""
 global CF := ""
 
-global D0 := "Definieren"
+global D0 := "Definiere"
 global D1 := "Definiere"
 global D2 := ""
 global DF := ""
 
-global E0 := "Erklären"
+global E0 := "Erkläre"
 global E1 := "Erkläre einfach und leicht verständlich"
 global E2 := ""
 global EF := ""
 
-global F0 := "Formulieren verbessern"
+global F0 := "Formuliere besser"
 global F1 := "Formuliere folgenden Text besser"
 global F2 := "Verbessere Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die verbesserte Fassung, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global FF := "writing"
 
-global G0 := "Grammatik, Rechtschreibung etc. prüfen"
+global G0 := "Prüfe Grammatik usw."
 global G1 := "Prüfe Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit des folgenden Textes"
 global G2 := "Gib mir konkrete Verbesserungsvorschläge und erläutere sie mir. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global GF := "writing"
 
-global Q0 := "Anfrage"
+global Q0 := "Perplexity…"
 global Q1 := ""
 global Q2 := ""
 global QF := ""
 
-global R0 := "Recherchieren"
+global R0 := "Recherchiere"
 global R1 := "Recherchiere zu folgendem Thema"
 global R2 := ""
 global RF := ""
 
-global S0 := "Zusammenfassen"
+global S0 := "Fasse zusammen"
 global S1 := "Fasse zusammen"
 global S2 := ""
 global SF := ""
 
-global T0 := "Übersetzen"
+global T0 := "Übersetze"
 global T1 := "Übersetze den folgenden Text ins Deutsche oder aus dem Deutschen"
 global T2 := "Liefere nur die Übersetzung. Behalte die ursprüngliche Formatierung und Struktur bei. ÜBERSETZE ZWISCHEN DEUTSCH UND ENGLISCH, ES SEI DENN, EINE ANDERE SPRACHE WIRD AUSDRÜCKLICH GEWÜNSCHT."
 global TF := "writing"
 
-global V0 := "Verdeutlichen/Vereinfachen"
+global V0 := "Verdeutliche/Vereinfache"
 global V1 := "Verdeutliche und vereinfache folgenden Text sprachlich"
 global V2 := "Schreibe nur die verdeutlichte und vereinfachte Fassung, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global VF := "writing"
@@ -207,14 +207,14 @@ global W1 := "Was ist"
 global W2 := ""
 global WF := ""
 
-global X0 := "Absagen"
+global X0 := "Verfasse Absage"
 global X1 := "Verfasse eine verneinende/ablehnende Antwort/Absage auf folgenden Text"
 global X2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global XF := "writing"
 
 global YorZ := "Y"
 
-global Y0 := "Zusagen"
+global Y0 := "Verfasse Zusage"
 global Y1 := "Verfasse eine bejahende/zustimmende Antwort/Zusage auf folgenden Text"
 global Y2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global YF := "writing"
@@ -265,19 +265,19 @@ LoadCustomVariables()
 ; ------------------------------------------------------------------------------
 
 if (WinHotkey_Perplexity) {
-    Hotkey, #%WinHotkey_Perplexity%, Perplexity_Hotkey ; Win+Q (by default)
+    Hotkey, #%WinHotkey_Perplexity%, Perplexity_Hotkey ; Default: Win+Q
 }
 if (WinHotkey_Dictionary) {
-    Hotkey, #%WinHotkey_Dictionary%, Dictionary_Hotkey ; Win+B (by default)
+    Hotkey, #%WinHotkey_Dictionary%, Dictionary_Hotkey ; Default: Win+B
 }
 if (WinHotkey_Google) {
-    Hotkey, #%WinHotkey_Google%, Google_Hotkey ; Win+G (by default) ⚠️ Remove Game Bar: Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
+    Hotkey, #%WinHotkey_Google%, Google_Hotkey ; Default: Win+G ⚠️ Remove Game Bar: Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
 }
 if (WinHotkey_Translator) {
-    Hotkey, #%WinHotkey_Translator%, Translator_Hotkey ; Win+T (by default)
+    Hotkey, #%WinHotkey_Translator%, Translator_Hotkey ; Default: Win+T
 }
 if (WinHotkey_Wikipedia) {
-    Hotkey, #%WinHotkey_Wikipedia%, Wikipedia_Hotkey ; Win+W (by default)
+    Hotkey, #%WinHotkey_Wikipedia%, Wikipedia_Hotkey ; Default: Win+W
 }
 
 
@@ -406,8 +406,12 @@ UrlEncode(str) {
 ; AI (Perplexity)
 ; ------------------------------------------------------------------------------
 
-AI(Task := "", Instructions := "", Focus := "")
+AI(hotkey)
 {
+    task := %hotkey%1
+    instructions := %hotkey%2
+    focus := %hotkey%F
+
     url := URL_PERPLEXITY
 
     ClipboardOld := ClipboardAll
@@ -424,14 +428,14 @@ AI(Task := "", Instructions := "", Focus := "")
         if (PREFIX != "")
             prompt .= PREFIX . "`n`n"
 
-        if (Task)
+        if (task != "")
         {
-            prompt .= Task . ":`n`n"
-            if (Instructions)
+            prompt .= task . ":`n`n"
+            if (instructions != "")
                 prompt .= "<text>`n"
             prompt .= Clipboard
-            if (Instructions)
-                prompt .= "`n</text>`n`n" . Instructions
+            if (instructions != "")
+                prompt .= "`n</text>`n`n" . instructions
         }
         else
             prompt .= Clipboard
@@ -441,10 +445,10 @@ AI(Task := "", Instructions := "", Focus := "")
 
         url .= "search?"
 
-        if (Focus != "")
-            url .= "focus=" . Focus . "&"
+        if (focus != "")
+            url .= "focus=" . focus . "&"
 
-        if (Pro = "1" || Pro = "true" || (Pro = "auto" && Focus != "writing"))
+        if (Pro = "1" || Pro = "true" || (Pro = "auto" && focus != "writing"))
             url .= "pro=true&"
 
         url .= "q=" . UrlEncode(prompt)
@@ -530,24 +534,24 @@ SetCapsLockState, AlwaysOff
 ; AI (Perplexity)
 ; ------------------------------------------------------------------------------
 
-SC03A & a::AI(A1, A2, AF)
-SC03A & b::AI(B1, B2, BF)
-SC03A & c::AI(C1, C2, CF)
-SC03A & d::AI(D1, D2, DF)
-SC03A & e::AI(E1, E2, EF)
-SC03A & f::AI(F1, F2, FF)
-SC03A & g::AI(G1, G2, GF)
-SC03A & q::AI(Q1, Q2, QF)
-SC03A & r::AI(R1, R2, RF)
-SC03A & s::AI(S1, S2, SF)
-SC03A & t::AI(T1, T2, TF)
-SC03A & v::AI(V1, V2, VF)
-SC03A & w::AI(W1, W2, WF)
-SC03A & x::AI(X1, X2, XF)
+SC03A & a::AI("A")
+SC03A & b::AI("B")
+SC03A & c::AI("C")
+SC03A & d::AI("D")
+SC03A & e::AI("E")
+SC03A & f::AI("F")
+SC03A & g::AI("G")
+SC03A & q::AI("Q")
+SC03A & r::AI("R")
+SC03A & s::AI("S")
+SC03A & t::AI("T")
+SC03A & v::AI("V")
+SC03A & w::AI("W")
+SC03A & x::AI("X")
 #If (CapsLockHotkeys and YorZ = "Y")
-SC03A & y::AI(Y1, Y2, YF)
+SC03A & y::AI("Y")
 #If (CapsLockHotkeys and YorZ = "Z")
-SC03A & z::AI(Z1, Z2, ZF)
+SC03A & z::AI("Z")
 
 #If
 
@@ -638,17 +642,19 @@ UseDarkTheme() {
         Gui, +LastFound
         WinSet, Transparent, 245
     }
+    Gui, Font, s12 ; Set font size to 12
     Gui, Add, Edit, hwndClipboardEdit vClipboard w620 h340, %Clipboard%
+    Gui, Font, s8 ; Set font size back to 8 (default)
     Loop, 15 {
-        ButtonLetter := SubStr("QWERTASDFG" . YorZ . "XCVB", A_Index, 1)
-        Gui, Add, Button, hwnd%ButtonLetter%Btn g%ButtonLetter%Action Left, % " &" . ButtonLetter . ": " . %ButtonLetter%0
+        Hotkey := SubStr("QWERTASDFG" . YorZ . "XCVB", A_Index, 1)
+        Gui, Add, Button, hwnd%Hotkey%Btn g%Hotkey%Action Left, % " &" . Hotkey . ": " . %Hotkey%0
     }
     Gui, Add, Button, hwndSaveBtn gSaveClipboard, ✔️ Save (LWin+LAlt)
     Gui, Add, Button, hwndClearBtn gClearClipboard, 🧹 Clear (Alt+Del)
     Gui, Add, Button, hwndRestoreBtn gRestoreClipboard, 🔄 Restore (Alt+Ins)
     Gui, Add, Button, hwndExitBtn gGuiClose, ❌ Exit (Esc)
     Gui, +Resize
-    Gui, Show, w640 h480, AI-Hotkeys Clipboard Editor
+    Gui, Show, w800 h600, AI-Hotkeys Clipboard Editor ; 800x600
     OnMessage(0x0005, "GuiSize") ; WM_SIZE message
 
     ; Center window on active monitor
@@ -670,7 +676,7 @@ GuiSize:
     ;MsgBox, GuiSize
     if (A_EventInfo == 1) ; The window has been minimized. No action needed.
         return
-    NewWidth := A_GuiWidth - 20
+    NewWidth := A_GuiWidth - 30 ; Adjusted to account for font size 12
     NewHeight := A_GuiHeight - 140 ; Adjusted to account for action button rows
     GuiControl, Move, %ClipboardEdit%, w%NewWidth% h%NewHeight%
 
@@ -686,12 +692,12 @@ GuiSize:
     ButtonWidth := TotalButtonWidth // 5 ; Divide available width by 5 for each button
     Loop, 5 {
         ButtonX := Margin + (A_Index - 1) * (ButtonWidth + ButtonSpacing)
-        ButtonLetter1 := SubStr("QWERT", A_Index, 1)
-        ButtonLetter2 := SubStr("ASDFG", A_Index, 1)
-        ButtonLetter3 := SubStr(YorZ . "XCVB", A_Index, 1)
-        GuiControl, Move, % %ButtonLetter1%Btn, x%ButtonX% y%RowY1% w%ButtonWidth%
-        GuiControl, Move, % %ButtonLetter2%Btn, x%ButtonX% y%RowY2% w%ButtonWidth%
-        GuiControl, Move, % %ButtonLetter3%Btn, x%ButtonX% y%RowY3% w%ButtonWidth%
+        Hotkey1 := SubStr("QWERT", A_Index, 1)
+        Hotkey2 := SubStr("ASDFG", A_Index, 1)
+        Hotkey3 := SubStr(YorZ . "XCVB", A_Index, 1)
+        GuiControl, Move, % %Hotkey1%Btn, x%ButtonX% y%RowY1% w%ButtonWidth%
+        GuiControl, Move, % %Hotkey2%Btn, x%ButtonX% y%RowY2% w%ButtonWidth%
+        GuiControl, Move, % %Hotkey3%Btn, x%ButtonX% y%RowY3% w%ButtonWidth%
     }
 
     ; Calculate position for the main action button row
@@ -749,8 +755,8 @@ XAction:
 YAction:
 ZAction:
     Gui, Submit, NoHide
-    action := SubStr(A_ThisLabel, 1, 1)
-    AI(%action%1, %action%2, %action%F)
+    hotkey := SubStr(A_ThisLabel, 1, 1)
+    AI(hotkey)
     Gui, Destroy
 return
 
