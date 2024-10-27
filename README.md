@@ -22,7 +22,7 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) (and [Deep
 
   While the AI features are the main focus, there are also a few additional hotkeys for quick searches and lookups using traditional online services like Google, Merriam-Webster's Dictionary, and Wikipedia.
 
-- **Clipboard Editor:** Edit clipboard content with a sleek GUI, supporting both light and dark themes.
+- **Query Editor:** Edit clipboard content with a sleek GUI, supporting both light and dark themes.
 
    This powerful tool enables you to preview and modify clipboard content before transmitting it to Perplexity. It offers a user-friendly interface for refining your text or query prior to AI processing, while also displaying all available hotkeys within the GUI for quick reference.
 
@@ -76,7 +76,7 @@ Perplexity Pro is definitely worth the investment, especially once you've master
 
 ## Usage
 
-When you launch **AI-Hotkeys**, it minimizes to the system tray. The app operates primarily through hotkeys, with no visible user interface except for the optional Clipboard Editor. The tray icon offers a concise context menu with options to Suspend Hotkeys, Pause Execution, or Exit the application.
+When you launch **AI-Hotkeys**, it minimizes to the system tray. The app operates primarily through hotkeys, with no visible user interface except for the optional Query Editor. The tray icon offers a concise context menu with options to Suspend Hotkeys, Pause Execution, or Exit the application.
 
 A comprehensive list of hotkeys and detailed usage instructions is provided below.
 
@@ -177,13 +177,13 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
 
 - **Search Wikipedia or open URL (Win + W):** Searches Wikipedia. Alternatively, if a URL is selected or copied to the clipboard, it opens the link in your default web browser, which is useful when encountering non-clickable URLs in various contexts.
 
-### Clipboard Editor
+### Query Editor
 
-The Clipboard Editor can be accessed using the following hotkey:
+The Query Editor can be accessed using the following hotkey:
 
-- **Alt + LWin** or **Win + LAlt**: Open/Close Clipboard Editor
+- **Alt + LWin** or **Win + LAlt**: Open/Close Query Editor
 
-When the Clipboard Editor is open, you can use the following hotkeys:
+When the Query Editor is open, you can use the following hotkeys:
 
 - **Alt + LWin** or **Win + LAlt** or **Alt + Enter**: Save
 - **Alt + Delete**: Clear
@@ -191,15 +191,15 @@ When the Clipboard Editor is open, you can use the following hotkeys:
 - **Esc**: Exit
 - **Alt + Q** or **Ctrl + Enter**: Query Perplexity…
 
-The Clipboard Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
+The Query Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
 
-🇺🇸 English Clipboard Editor:
+🇺🇸 English Query Editor:
 
-![AI-Hotkeys-ClipboardEditor](AI-Hotkeys-ClipboardEditor.png)
+![AI-Hotkeys-QueryEditor](AI-Hotkeys-QueryEditor.png)
 
-🇩🇪 German Clipboard Editor:
+🇩🇪 German Query Editor:
 
-![AI-Hotkeys-ClipboardEditor-de](AI-Hotkeys-ClipboardEditor-de.png)
+![AI-Hotkeys-QueryEditor-de](AI-Hotkeys-QueryEditor-de.png)
 
 ## Customization
 

@@ -1,6 +1,8 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.2.2.20241007 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.3.0.20241027 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
+
+Version = 1.3.0.20241027 ; ^^^^^^^^^^^^^^
 
 ; This program is free software: you can redistribute it and/or modify
 ; it under the terms of the GNU General Public License as published by
@@ -34,9 +36,11 @@ global Language := GetLanguage()
 ; Default (English) Tasks and Writing Instructions
 ; ------------------------------------------------------------------------------
 
+; Primary Hotkeys
+
 global A0 := "Answer"
 global A1 := "Compose an answer to the following text"
-global A2 := "Answer in my name. Maintain the language and level of formality. Write only the answer, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global A2 := "Answer in my name. Maintain the language and level of formality. Write only the answer, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global AF := "writing"
 
 global B0 := "Calculate/Convert"
@@ -60,13 +64,13 @@ global E2 := ""
 global EF := ""
 
 global F0 := "Formulate better"
-global F1 := "Formulate the following text better"
-global F2 := "Improve grammar, spelling, style, tone, and comprehensibility. Maintain the language and level of formality. Write only the improved version, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global F1 := "Formulate the following text better (in its original language)"
+global F2 := "Improve grammar, spelling, style, tone and comprehensibility while maintaining the original language and level of formality. Use active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". Write only the improved version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global FF := "writing"
 
 global G0 := "Check grammar etc."
 global G1 := "Check grammar, spelling, style, tone, and comprehensibility of the following text"
-global G2 := "Provide specific suggestions for improvement and explain them to me. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global G2 := "Provide specific suggestions for improvement and explain them to me. Prefer active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global GF := "writing"
 
 global Q0 := "Query Perplexity…"
@@ -86,12 +90,12 @@ global SF := ""
 
 global T0 := "Translate"
 global T1 := "Translate the following text to or from English"
-global T2 := "Provide only the translated text. Maintain the original formatting and structure. Translate between English and German unless another language is specifically requested."
+global T2 := "Write only the translation of the text enclosed in <text> tags, nothing else, not even a greeting. Maintain the original formatting and structure, except for the <text> tags. TRANSLATE BETWEEN GERMAN AND ENGLISH UNLESS ANOTHER LANGUAGE IS EXPLICITLY REQUESTED."
 global TF := "writing"
 
 global V0 := "Clarify/Simplify"
 global V1 := "Clarify and simplify the following text linguistically"
-global V2 := "Write only the clarified and simplified version, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global V2 := "Write only the clarified and simplified version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global VF := "writing"
 
 global W0 := "What is"
@@ -101,18 +105,72 @@ global WF := ""
 
 global X0 := "Reject"
 global X1 := "Compose a negative response/rejection to the following text"
-global X2 := "Answer in my name. Maintain the language and level of formality. Write only the rejection, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global X2 := "Answer in my name. Maintain the language and level of formality. Write only the rejection, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global XF := "writing"
 
 global YorZ := "Z"
 
 global Z0 := "Accept"
 global Z1 := "Compose an affirmative response/acceptance to the following text"
-global Z2 := "Answer in my name. Maintain the language and level of formality. Write only the acceptance, nothing else. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global Z2 := "Answer in my name. Maintain the language and level of formality. Write only the acceptance, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
 global ZF := "writing"
 
-global PREFIX := ""
-global SUFFIX := ""
+; Secondary Hotkeys
+
+global H0 := ""
+global H1 := ""
+global H2 := ""
+global HF := ""
+
+global I0 := ""
+global I1 := ""
+global I2 := ""
+global IF := ""
+
+global J0 := ""
+global J1 := ""
+global J2 := ""
+global JF := ""
+
+global K0 := ""
+global K1 := ""
+global K2 := ""
+global KF := ""
+
+global L0 := ""
+global L1 := ""
+global L2 := ""
+global LF := ""
+
+global M0 := ""
+global M1 := ""
+global M2 := ""
+global MF := ""
+
+global N0 := ""
+global N1 := ""
+global N2 := ""
+global NF := ""
+
+global O0 := ""
+global O1 := ""
+global O2 := ""
+global OF := ""
+
+global P0 := ""
+global P1 := ""
+global P2 := ""
+global PF := ""
+
+global U0 := ""
+global U1 := ""
+global U2 := ""
+global UF := ""
+
+global Y0 := ""
+global Y1 := ""
+global Y2 := ""
+global YF := ""
 
 ; ------------------------------------------------------------------------------
 ; Default (English) URLs
@@ -128,6 +186,16 @@ global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/translator#auto/auto/"
 global URL_WIKIPEDIA := "https://en.wikipedia.org/"
 global URL_WIKIPEDIA_SEARCH := "https://en.wikipedia.org/w/index.php?search="
 
+; ------------------------------------------------------------------------------
+; English Button Captions
+; ------------------------------------------------------------------------------
+
+global CLOSE_BUTTON_CAPTION := "❌ Close (Esc)"
+global CLEAR_BUTTON_CAPTION := "❎ Clear (Alt+BS/Del)"
+global RESTORE_BUTTON_CAPTION := "🔄 Restore (Alt+``/Ins)"
+global SAVE_BUTTON_CAPTION := "✅ Save (Alt+Enter)"
+global SEND_BUTTON_CAPTION := "✔️ Send (Ctrl+Enter)"
+
 
 
 ; ==============================================================================
@@ -142,9 +210,11 @@ if (Language = "de") {
 ; Default (German) Tasks and Writing Instructions
 ; ------------------------------------------------------------------------------
 
+; Primary Hotkeys
+
 global A0 := "Verfasse Antwort"
 global A1 := "Verfasse eine Antwort auf folgenden Text"
-global A2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Antwort, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global A2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Antwort, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global AF := "writing"
 
 global B0 := "Berechne/Konvertiere"
@@ -168,13 +238,13 @@ global E2 := ""
 global EF := ""
 
 global F0 := "Formuliere besser"
-global F1 := "Formuliere folgenden Text besser"
-global F2 := "Verbessere Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die verbesserte Fassung, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global F1 := "Formuliere folgenden Text besser (in seiner Originalsprache)"
+global F2 := "Verbessere Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit unter Beibehaltung der ursprünglichen Sprache und des Formalitätsgrads. Verwende aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". Schreibe nur die verbesserte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global FF := "writing"
 
 global G0 := "Prüfe Grammatik usw."
 global G1 := "Prüfe Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit des folgenden Textes"
-global G2 := "Gib mir konkrete Verbesserungsvorschläge und erläutere sie mir. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global G2 := "Gib mir konkrete Verbesserungsvorschläge und erläutere sie mir. Bevorzuge aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global GF := "writing"
 
 global Q0 := "Perplexity…"
@@ -194,12 +264,12 @@ global SF := ""
 
 global T0 := "Übersetze"
 global T1 := "Übersetze den folgenden Text ins Deutsche oder aus dem Deutschen"
-global T2 := "Liefere nur die Übersetzung. Behalte die ursprüngliche Formatierung und Struktur bei. ÜBERSETZE ZWISCHEN DEUTSCH UND ENGLISCH, ES SEI DENN, EINE ANDERE SPRACHE WIRD AUSDRÜCKLICH GEWÜNSCHT."
+global T2 := "Schreibe nur die Übersetzung des mit <text>-Tags umgebenen Texts, sonst nichts, auch keine Grußformel. Behalte die ursprüngliche Formatierung und Struktur bei, mit Ausnahme der <text>-Tags. ÜBERSETZE ZWISCHEN DEUTSCH UND ENGLISCH, ES SEI DENN, EINE ANDERE SPRACHE WIRD AUSDRÜCKLICH GEWÜNSCHT."
 global TF := "writing"
 
 global V0 := "Verdeutliche/Vereinfache"
 global V1 := "Verdeutliche und vereinfache folgenden Text sprachlich"
-global V2 := "Schreibe nur die verdeutlichte und vereinfachte Fassung, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global V2 := "Schreibe nur die verdeutlichte und vereinfachte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global VF := "writing"
 
 global W0 := "Was ist"
@@ -209,18 +279,72 @@ global WF := ""
 
 global X0 := "Verfasse Absage"
 global X1 := "Verfasse eine verneinende/ablehnende Antwort/Absage auf folgenden Text"
-global X2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global X2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global XF := "writing"
 
 global YorZ := "Y"
 
 global Y0 := "Verfasse Zusage"
 global Y1 := "Verfasse eine bejahende/zustimmende Antwort/Zusage auf folgenden Text"
-global Y2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts. BEHALTE DIE ORIGINAL-SPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global Y2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
 global YF := "writing"
 
-global PREFIX := ""
-global SUFFIX := ""
+; Secondary Hotkeys
+
+global H0 := ""
+global H1 := ""
+global H2 := ""
+global HF := ""
+
+global I0 := ""
+global I1 := ""
+global I2 := ""
+global IF := ""
+
+global J0 := ""
+global J1 := ""
+global J2 := ""
+global JF := ""
+
+global K0 := ""
+global K1 := ""
+global K2 := ""
+global KF := ""
+
+global L0 := ""
+global L1 := ""
+global L2 := ""
+global LF := ""
+
+global M0 := ""
+global M1 := ""
+global M2 := ""
+global MF := ""
+
+global N0 := ""
+global N1 := ""
+global N2 := ""
+global NF := ""
+
+global O0 := ""
+global O1 := ""
+global O2 := ""
+global OF := ""
+
+global P0 := ""
+global P1 := ""
+global P2 := ""
+global PF := ""
+
+global U0 := ""
+global U1 := ""
+global U2 := ""
+global UF := ""
+
+global Z0 := ""
+global Z1 := ""
+global Z2 := ""
+global ZF := ""
 
 ; ------------------------------------------------------------------------------
 ; Default (German) URLs
@@ -236,17 +360,37 @@ global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/translator#auto/auto/"
 global URL_WIKIPEDIA := "https://de.wikipedia.org/"
 global URL_WIKIPEDIA_SEARCH := "https://de.wikipedia.org/w/index.php?search="
 
+; ------------------------------------------------------------------------------
+; German Button Captions
+; ------------------------------------------------------------------------------
+
+global CLOSE_BUTTON_CAPTION := "❌ Schließen (Esc)"
+global CLEAR_BUTTON_CAPTION := "❎ Löschen (Alt+RT/Entf)"
+global RESTORE_BUTTON_CAPTION := "🔄 Wiederher. (Alt+^/Einfg)"
+global SAVE_BUTTON_CAPTION := "✅ Speichern (Alt+Enter)"
+global SEND_BUTTON_CAPTION := "✔️ Senden (Strg+Enter)"
+
 }
 
 
 
 ; ==============================================================================
-; Default Settings and Win Hotkeys
+; Additional Variables, Default Settings and Win Hotkeys
 ; ==============================================================================
 
+; Additional Variables
+
+global PREFIX := ""
+global SUFFIX := ""
+
+; Default Settings
+
 global CapsLockHotkeys := true
-global ClipboardEditor := true
-global Pro := true
+global QueryEditor := true
+global Pro := "auto"
+global UseDarkTheme := "auto"
+
+; Win Hotkeys
 
 global WinHotkey_Perplexity := "q"
 global WinHotkey_Dictionary := "b"
@@ -285,6 +429,129 @@ if (WinHotkey_Wikipedia) {
 ; ==============================================================================
 ; Functions
 ; ==============================================================================
+
+; ------------------------------------------------------------------------------
+; Use Dark Theme
+; ------------------------------------------------------------------------------
+
+UseDarkTheme() {
+    if (UseDarkTheme != "auto")
+        return (UseDarkTheme = "1" || UseDarkTheme = "true")
+
+    try {
+        RegRead, AppsUseLightTheme, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme
+        return (AppsUseLightTheme == 0)
+    } catch {
+        return false ; Default to false if unable to read the registry
+    }
+}
+
+; ------------------------------------------------------------------------------
+; Help
+; ------------------------------------------------------------------------------
+
+Help()
+{
+    local letter
+
+    ; AI-Hotkeys Version
+    HelpText := "AI-Hotkeys Version " . Version . "`n"
+
+#If (QueryEditor)
+
+    ; Query Editor Hotkeys
+    HelpText .= "`nQuery Editor Hotkeys:`n"
+    HelpText .= "LWin+LAlt = Query Editor`n"
+
+#If
+
+#If (CapsLockHotkeys)
+
+    ; AI (Perplexity) Hotkeys
+    HelpText .= "`nAI (Perplexity) Hotkeys:`n"
+    Loop, 26 {
+        letter := Chr(A_Index + 64)  ; Convert to uppercase letter
+        titleVar := letter . "0"
+        if (%titleVar% != "") {
+            HelpText .= "CapsLock+" . letter . " = " . %titleVar% . "`n"
+        }
+    }
+
+    ; CapsLock Hotkeys
+    HelpText .= "`nCapsLock Hotkeys:`n"
+    HelpText .= "Ctrl+CapsLock = Toggle CapsLock`n"
+    HelpText .= "CapsLock+F1 = Help`n"
+    HelpText .= "CapsLock+F2 = Suspend Hotkeys`n"
+    HelpText .= "CapsLock+F3 = Pause Script`n"
+    HelpText .= "CapsLock+F4 = Exit`n"
+    HelpText .= "CapsLock+F5 = Reload Script`n"
+    HelpText .= "CapsLock+F12 = Edit Script`n"
+
+#If
+
+    ; Win Hotkeys
+    if (WinHotkey_Perplexity || WinHotkey_Dictionary || WinHotkey_Google || WinHotkey_Translator || WinHotkey_Wikipedia) {
+        HelpText .= "`nWin Hotkeys:`n"
+        if (WinHotkey_Perplexity)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Perplexity) . " = Perplexity`n"
+        if (WinHotkey_Dictionary)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Dictionary) . " = Dictionary`n"
+        if (WinHotkey_Google)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Google) . " = Google`n"
+        if (WinHotkey_Translator)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Translator) . " = Translator`n"
+        if (WinHotkey_Wikipedia)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Wikipedia) . " = Wikipedia`n"
+    }
+
+    HelpText := RTrim(HelpText, "`n")
+
+    ; Calculate required height based on text content
+    StringReplace, HelpText, HelpText, `n, `n, UseErrorLevel
+    lineCount := ErrorLevel + 1  ; Number of lines (+1 because last line might not end with `n)
+    lineHeight := 13  ; Approximate height per line in pixels
+    padding := 10     ; Extra padding in pixels
+    totalHeight := (lineCount * lineHeight) + padding
+
+    ; Create GUI with custom buttons
+    Gui, Help:New, +AlwaysOnTop
+
+    if UseDarkTheme() { ; Dark theme colors
+        Gui, Color, 1E1E1E, 333333 ; Set dark background and control colors
+        Gui, Font, cSilver, Segoe UI ; Set light text color and font
+        Gui, +LastFound
+        WinSet, Transparent, 245
+        ; Force dark mode on the entire window
+        DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 19, "Int*", 1, "Int", 4)
+        DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 20, "Int*", 1, "Int", 4)
+    } else { ; Light theme colors
+        Gui, Color, FFFFFF, F0F0F0 ; Set light background and control colors
+        Gui, Font, cBlack, Segoe UI ; Set dark text color and font
+        Gui, +LastFound
+        WinSet, Transparent, 245
+    }
+
+    ; Calculate total width based on buttons (120 + 10 + 120 = 250 plus padding)
+    Gui, Help:Add, Edit, ReadOnly w250 h%totalHeight% vHelpText -VScroll +VScroll, %HelpText%
+    Gui, Help:Add, Button, gCopyHelp w120 h30, ➡️ Clipboard
+    Gui, Help:Add, Button, x+10 gCloseHelp w120 h30 +Default, % CLOSE_BUTTON_CAPTION
+    Gui, Help:Show,, %A_ScriptName% Help
+    ; Set focus to the Close button to prevent text selection
+    GuiControl, Focus, Button2
+
+    return
+
+    CopyHelp:
+        GuiControlGet, HelpText,, HelpText
+        Clipboard := HelpText
+        return
+
+    CloseHelp:
+    HelpGuiClose:
+    HelpGuiEscape:
+        Gui, Help:Destroy
+        return
+}
 
 ; ------------------------------------------------------------------------------
 ; Get Language
@@ -358,7 +625,7 @@ LoadCustomVariables() {
             if (parts0 == 2)
             {
                 key := parts1
-                value := parts2
+                value := StrReplace(RegExReplace(parts2, "^""(.*)""$", "$1"), "\n", "`n")
                 if (value = "0" || value = "false")
                     %key% := false
                 else
@@ -406,11 +673,20 @@ UrlEncode(str) {
 ; AI (Perplexity)
 ; ------------------------------------------------------------------------------
 
-AI(hotkey)
+AI(hotkey := "")
 {
-    task := %hotkey%1
-    instructions := %hotkey%2
-    focus := %hotkey%F
+    ;MsgBox, Hotkey: %hotkey%
+
+    task := ""
+    instructions := ""
+    focus := ""
+
+    if (hotkey != "")
+    {
+        task := %hotkey%1
+        instructions := %hotkey%2
+        focus := %hotkey%F
+    }
 
     url := URL_PERPLEXITY
 
@@ -426,7 +702,7 @@ AI(hotkey)
         prompt := ""
 
         if (PREFIX != "")
-            prompt .= PREFIX . "`n`n"
+            prompt .= PREFIX
 
         if (task != "")
         {
@@ -441,7 +717,9 @@ AI(hotkey)
             prompt .= Clipboard
 
         if (SUFFIX != "")
-            prompt .= "`n`n" . SUFFIX
+            prompt .= SUFFIX
+
+        ;MsgBox, prompt: %prompt%
 
         url .= "search?"
 
@@ -454,13 +732,25 @@ AI(hotkey)
         url .= "q=" . UrlEncode(prompt)
     }
 
-    Clipboard := ClipboardOld
+    ;MsgBox, url: %url%
 
     if (StrLen(url) > 16384) {
-        MsgBox, 48, 414 Request-URI Too Large, % StrLen(url) . " > 16384"
+        ;MsgBox, 48, 414 Request-URI Too Large, % StrLen(url) . " > 16384"
+
+        Clipboard := prompt
+        Sleep, 1000
+        Perplexity()
+        Sleep, 1000
+        Send, ^v
+        Sleep, 1000
+        Send, .
+        Sleep, 1000
+        Send, {Enter}
     } else {
         Run, % url
     }
+
+    Clipboard := ClipboardOld
 
     return
 }
@@ -516,42 +806,54 @@ Search(Engine)
 
 #If (CapsLockHotkeys)
 
-; ----------------------------------------------------------------------------------------------------
-; CapsLock Behavior
-; ----------------------------------------------------------------------------------------------------
+; Disable the default CapsLock behavior
+SetCapsLockState, AlwaysOff
+
+; ------------------------------------------------------------------------------
+; AI (Perplexity) Hotkeys
+; ------------------------------------------------------------------------------
+
+; Dynamically set hotkeys
+Loop, 26
+{
+    letter := Chr(A_Index + 64)  ; Convert loop index to uppercase letter (A-Z)
+    titleVar := letter . "0"
+    if (%titleVar% != "") {
+        Hotkey, SC03A & %letter%, AIHandler
+    }
+}
 
 ; ⚠️ AutoHotkey executes the auto-execute section of the script first.
 ; This auto-execute section runs until it hits a return, hotkey, or hotstring.
 ; Move the hotkeys to the very bottom of the script, after any other code.
 
-; Disable the default CapsLock behavior
-SetCapsLockState, AlwaysOff
-
 ; Use Ctrl+CapsLock to toggle CapsLock
 ^SC03A::SetCapsLockState, % GetKeyState("CapsLock", "T") ? "AlwaysOff" : "AlwaysOn"
 
-; ------------------------------------------------------------------------------
-; AI (Perplexity)
-; ------------------------------------------------------------------------------
+; CapsLock+F1 = Help
+SC03A & F1::Help()
 
-SC03A & a::AI("A")
-SC03A & b::AI("B")
-SC03A & c::AI("C")
-SC03A & d::AI("D")
-SC03A & e::AI("E")
-SC03A & f::AI("F")
-SC03A & g::AI("G")
-SC03A & q::AI("Q")
-SC03A & r::AI("R")
-SC03A & s::AI("S")
-SC03A & t::AI("T")
-SC03A & v::AI("V")
-SC03A & w::AI("W")
-SC03A & x::AI("X")
-#If (CapsLockHotkeys and YorZ = "Y")
-SC03A & y::AI("Y")
-#If (CapsLockHotkeys and YorZ = "Z")
-SC03A & z::AI("Z")
+; CapsLock+F2 = Suspend Hotkeys
+SC03A & F2::Suspend
+
+; CapsLock+F3 = Pause Script
+SC03A & F3::Pause
+
+; CapsLock+F4 = Exit
+SC03A & F4::ExitApp
+
+; CapsLock+F5 = Reload This Script
+SC03A & F5::Reload
+
+; CapsLock+F12 = Edit This Script
+SC03A & F12::Edit
+
+; ⚠️ Place the hotkey handler after the script's auto-execute section, below the
+; hotkey definitions!
+
+AIHandler:
+    AI(Trim(SubStr(A_ThisHotkey, -1)))  ; Extract and trim the letter from the hotkey
+return
 
 #If
 
@@ -602,32 +904,31 @@ return
 
 
 ; ==============================================================================
-; Clipboard Editor (Alt+LWin / Win+LAlt)
+; Query Editor (Alt+LWin / Win+LAlt)
 ; ==============================================================================
 
-#If (ClipboardEditor)
+#If (QueryEditor)
 
 #InstallKeybdHook
 #UseHook
 
-UseDarkTheme() {
-    try {
-        RegRead, AppsUseLightTheme, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme
-        return (AppsUseLightTheme == 0)
-    } catch {
-        return false ; Default to false if unable to read the registry
-    }
-}
-
 !LWin::
 #LAlt::
-    IfWinExist AI-Hotkeys Clipboard Editor
+    IfWinExist AI-Hotkeys Query Editor
     {
         Gui, Submit, NoHide
         Gui, Destroy
         return
     }
-    ClipboardBackup := ClipboardAll
+
+    OldClipboard := Clipboard
+    OldClipboardAll := ClipboardAll
+    Clipboard := ""
+    Send, ^c
+    ClipWait, 0.5
+    if (ErrorLevel)
+        Clipboard := OldClipboardAll
+
     if UseDarkTheme() { ; Dark theme colors
         Gui, Color, 1E1E1E, 333333 ; Set dark background and control colors
         Gui, Font, cSilver, Segoe UI ; Set light text color and font
@@ -649,12 +950,13 @@ UseDarkTheme() {
         Hotkey := SubStr("QWERTASDFG" . YorZ . "XCVB", A_Index, 1)
         Gui, Add, Button, hwnd%Hotkey%Btn g%Hotkey%Action Left, % " &" . Hotkey . ": " . %Hotkey%0
     }
-    Gui, Add, Button, hwndSaveBtn gSaveClipboard, ✔️ Save (LWin+LAlt)
-    Gui, Add, Button, hwndClearBtn gClearClipboard, 🧹 Clear (Alt+Del)
-    Gui, Add, Button, hwndRestoreBtn gRestoreClipboard, 🔄 Restore (Alt+Ins)
-    Gui, Add, Button, hwndExitBtn gGuiClose, ❌ Exit (Esc)
+    Gui, Add, Button, hwndCloseBtn gGuiClose, % CLOSE_BUTTON_CAPTION
+    Gui, Add, Button, hwndClearBtn gClear, % CLEAR_BUTTON_CAPTION
+    Gui, Add, Button, hwndRestoreBtn gRestore, % RESTORE_BUTTON_CAPTION
+    Gui, Add, Button, hwndSaveBtn gSave, % SAVE_BUTTON_CAPTION
+    Gui, Add, Button, hwndSendBtn gSend, % SEND_BUTTON_CAPTION
     Gui, +Resize
-    Gui, Show, w800 h600, AI-Hotkeys Clipboard Editor ; 800x600
+    Gui, Show, w800 h600, AI-Hotkeys Query Editor ; 800x600
     OnMessage(0x0005, "GuiSize") ; WM_SIZE message
 
     ; Center window on active monitor
@@ -665,8 +967,8 @@ UseDarkTheme() {
         SysGet, Monitor, Monitor, %A_Index%
         if (MouseX >= MonitorLeft && MouseX <= MonitorRight && MouseY >= MonitorTop && MouseY <= MonitorBottom)
         {
-            WinGetPos,,, Width, Height, AI-Hotkeys Clipboard Editor
-            WinMove, AI-Hotkeys Clipboard Editor,, MonitorLeft + (MonitorRight - MonitorLeft - Width) // 2, MonitorTop + (MonitorBottom - MonitorTop - Height) // 2
+            WinGetPos,,, Width, Height, AI-Hotkeys Query Editor
+            WinMove, AI-Hotkeys Query Editor,, MonitorLeft + (MonitorRight - MonitorLeft - Width) // 2, MonitorTop + (MonitorBottom - MonitorTop - Height) // 2
             break
         }
     }
@@ -706,35 +1008,48 @@ GuiSize:
     ; Move main action buttons
     Margin := 10
     ButtonSpacing := 7
-    TotalButtonWidth := A_GuiWidth - (2 * Margin) - (3 * ButtonSpacing)
-    ButtonWidth := TotalButtonWidth // 4 ; Divide available width by 5 for each button
+    TotalButtonWidth := A_GuiWidth - (2 * Margin) - (4 * ButtonSpacing)
+    ButtonWidth := TotalButtonWidth // 5 ; Divide available width by 5 for each button
     ButtonX := Margin + 0 * (ButtonWidth + ButtonSpacing)
-    GuiControl, Move, %SaveBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
+    GuiControl, Move, %CloseBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
     ButtonX := Margin + 1 * (ButtonWidth + ButtonSpacing)
     GuiControl, Move, %ClearBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
     ButtonX := Margin + 2 * (ButtonWidth + ButtonSpacing)
     GuiControl, Move, %RestoreBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
     ButtonX := Margin + 3 * (ButtonWidth + ButtonSpacing)
-    GuiControl, Move, %ExitBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
+    GuiControl, Move, %SaveBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
+    ButtonX := Margin + 4 * (ButtonWidth + ButtonSpacing)
+    GuiControl, Move, %SendBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
 return
 
-SaveClipboard:
-    Gui, Submit, NoHide
+GuiClose:  ; Do not rename this label, it's called by the GUI's close button (X)!
     Gui, Destroy
+    Clipboard := OldClipboardAll
 return
 
-ClearClipboard:
+Clear:
+    ControlFocus,, ahk_id %ClipboardEdit%
     GuiControl,, %ClipboardEdit%
 return
 
-RestoreClipboard:
+Restore:
+    ControlFocus,, ahk_id %ClipboardEdit%
+    Clipboard := OldClipboard
     GuiControl,, %ClipboardEdit%, %Clipboard%
     ControlSend, , ^a, ahk_id %ClipboardEdit%
 return
 
-GuiClose:
+Save:
+    ControlFocus,, ahk_id %ClipboardEdit%
+    Gui, Submit, NoHide
+    OldClipboard := Clipboard
+    OldClipboardAll := OldClipboard
+return
+
+Send:
+    Gui, Submit, NoHide
+    AI()
     Gui, Destroy
-    Clipboard := ClipboardBackup
 return
 
 ; AI action functions for the AI action buttons
@@ -760,31 +1075,36 @@ ZAction:
     Gui, Destroy
 return
 
-#IfWinActive, AI-Hotkeys Clipboard Editor
+#IfWinActive, AI-Hotkeys Query Editor
 
-; Save
-!Enter:: ; Alt+Enter
-    Gosub, SaveClipboard
-return
-
-; Clear
-!Delete:: ; Alt+Del
-    Gosub, ClearClipboard
-return
-
-; Restore
-!Insert:: ; Alt+Ins
-    Gosub, RestoreClipboard
-return
-
-; Exit
+; Close
 Esc:: ; Esc
     Gosub, GuiClose
 return
 
-; Query (Perplexity)
-^Enter:: ; Ctrl+Enter
-    Gosub, QAction
+; Clear
+!Backspace:: ; Alt+BS
+!Delete:: ; Alt+Del
+    Gosub, Clear
+return
+
+; Restore
+!`:: ; Alt+`
+!^:: ; Alt+^
+!Insert:: ; Alt+Ins
+    Gosub, Restore
+return
+
+; Save
+!Enter:: ; Alt+Return
+!NumpadEnter:: ; Alt+Enter
+    Gosub, Save
+return
+
+; Send
+^Enter:: ; Ctrl+Return
+^NumpadEnter:: ; Ctrl+Enter
+    Gosub, Send
 return
 
 #IfWinActive
