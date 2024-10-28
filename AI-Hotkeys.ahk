@@ -1,8 +1,8 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.3.0.20241027 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.3.0.20241028 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
 
-Version = 1.3.0.20241027 ; ^^^^^^^^^^^^^^
+Version = 1.3.0.20241028 ; ^^^^^^^^^^^^^^
 
 ; This program is free software: you can redistribute it and/or modify
 ; it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ global Language := GetLanguage()
 ; ==============================================================================
 
 ; ------------------------------------------------------------------------------
-; Default (English) Tasks and Writing Instructions
+; Default (English) Tasks and Instructions
 ; ------------------------------------------------------------------------------
 
 ; Primary Hotkeys
@@ -41,136 +41,136 @@ global Language := GetLanguage()
 global A0 := "Answer"
 global A1 := "Compose an answer to the following text"
 global A2 := "Answer in my name. Maintain the language and level of formality. Write only the answer, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
-global AF := "writing"
+global A3 := "writing"
 
 global B0 := "Calculate/Convert"
 global B1 := "Calculate/Convert and explain"
 global B2 := ""
-global BF := ""
+global B3 := ""
 
 global C0 := "Check correctness"
 global C1 := "Check the correctness and justify your assessment"
 global C2 := ""
-global CF := ""
+global C3 := ""
 
 global D0 := "Define"
 global D1 := "Define"
 global D2 := ""
-global DF := ""
+global D3 := ""
 
-global E0 := "Explain"
+global E0 := "Explain simply"
 global E1 := "Explain simply and in an easily understandable way"
 global E2 := ""
-global EF := ""
+global E3 := ""
 
 global F0 := "Formulate better"
 global F1 := "Formulate the following text better (in its original language)"
 global F2 := "Improve grammar, spelling, style, tone and comprehensibility while maintaining the original language and level of formality. Use active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". Write only the improved version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
-global FF := "writing"
+global F3 := "writing"
 
 global G0 := "Check grammar etc."
 global G1 := "Check grammar, spelling, style, tone, and comprehensibility of the following text"
 global G2 := "Provide specific suggestions for improvement and explain them to me. Prefer active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
-global GF := "writing"
+global G3 := "writing"
 
 global Q0 := "Query Perplexity…"
 global Q1 := ""
 global Q2 := ""
-global QF := ""
+global Q3 := ""
 
 global R0 := "Research"
 global R1 := "Research the following topic"
 global R2 := ""
-global RF := ""
+global R3 := ""
 
 global S0 := "Summarize"
 global S1 := "Summarize"
 global S2 := ""
-global SF := ""
+global S3 := ""
 
 global T0 := "Translate"
 global T1 := "Translate the following text to or from English"
 global T2 := "Write only the translation of the text enclosed in <text> tags, nothing else, not even a greeting. Maintain the original formatting and structure, except for the <text> tags. TRANSLATE BETWEEN GERMAN AND ENGLISH UNLESS ANOTHER LANGUAGE IS EXPLICITLY REQUESTED."
-global TF := "writing"
+global T3 := "writing"
 
 global V0 := "Clarify/Simplify"
 global V1 := "Clarify and simplify the following text linguistically"
 global V2 := "Write only the clarified and simplified version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
-global VF := "writing"
+global V3 := "writing"
 
 global W0 := "What is"
 global W1 := "What is"
 global W2 := ""
-global WF := ""
+global W3 := ""
 
 global X0 := "Reject"
 global X1 := "Compose a negative response/rejection to the following text"
 global X2 := "Answer in my name. Maintain the language and level of formality. Write only the rejection, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
-global XF := "writing"
+global X3 := "writing"
 
 global YorZ := "Z"
 
 global Z0 := "Accept"
 global Z1 := "Compose an affirmative response/acceptance to the following text"
 global Z2 := "Answer in my name. Maintain the language and level of formality. Write only the acceptance, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
-global ZF := "writing"
+global Z3 := "writing"
 
 ; Secondary Hotkeys
 
 global H0 := ""
 global H1 := ""
 global H2 := ""
-global HF := ""
+global H3 := ""
 
 global I0 := ""
 global I1 := ""
 global I2 := ""
-global IF := ""
+global I3 := ""
 
 global J0 := ""
 global J1 := ""
 global J2 := ""
-global JF := ""
+global J3 := ""
 
 global K0 := ""
 global K1 := ""
 global K2 := ""
-global KF := ""
+global K3 := ""
 
 global L0 := ""
 global L1 := ""
 global L2 := ""
-global LF := ""
+global L3 := ""
 
 global M0 := ""
 global M1 := ""
 global M2 := ""
-global MF := ""
+global M3 := ""
 
 global N0 := ""
 global N1 := ""
 global N2 := ""
-global NF := ""
+global N3 := ""
 
 global O0 := ""
 global O1 := ""
 global O2 := ""
-global OF := ""
+global O3 := ""
 
 global P0 := ""
 global P1 := ""
 global P2 := ""
-global PF := ""
+global P3 := ""
 
 global U0 := ""
 global U1 := ""
 global U2 := ""
-global UF := ""
+global U3 := ""
 
 global Y0 := ""
 global Y1 := ""
 global Y2 := ""
-global YF := ""
+global Y3 := ""
 
 ; ------------------------------------------------------------------------------
 ; Default (English) URLs
@@ -181,8 +181,17 @@ global URL_DICTIONARY := "https://www.merriam-webster.com/"
 global URL_DICTIONARY_SEARCH := "https://www.merriam-webster.com/dictionary/"
 global URL_GOOGLE := "https://www.google.com/"
 global URL_GOOGLE_SEARCH := "https://www.google.com/search?q="
-global URL_TRANSLATOR := "https://www.deepl.com/"
-global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/translator#auto/auto/"
+
+; FIXME: Disabled DeepL due to OpenResty's inability to handle URL-encoded
+; newlines (%0A) in request URLs, which results in 404 Not Found errors.
+;global URL_TRANSLATOR := "https://www.deepl.com/"
+;;global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/translator#auto/auto/"
+;global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/en/translator/q/auto/%s/auto/"
+; Falling back to Google Translate until this is fixed.
+global URL_TRANSLATOR := "https://translate.google.com/"
+;global URL_TRANSLATOR_SEARCH := "https://translate.google.com/#auto/auto/"
+global URL_TRANSLATOR_SEARCH := "https://translate.google.com/?sl=auto&tl=auto&text=%s&op=translate"
+
 global URL_WIKIPEDIA := "https://en.wikipedia.org/"
 global URL_WIKIPEDIA_SEARCH := "https://en.wikipedia.org/w/index.php?search="
 
@@ -207,7 +216,7 @@ if (Language = "de") {
     ;MsgBox, Default (German) Variables
 
 ; ------------------------------------------------------------------------------
-; Default (German) Tasks and Writing Instructions
+; Default (German) Tasks and Instructions
 ; ------------------------------------------------------------------------------
 
 ; Primary Hotkeys
@@ -215,136 +224,136 @@ if (Language = "de") {
 global A0 := "Verfasse Antwort"
 global A1 := "Verfasse eine Antwort auf folgenden Text"
 global A2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Antwort, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
-global AF := "writing"
+global A3 := "writing"
 
 global B0 := "Berechne/Konvertiere"
 global B1 := "Berechne/Konvertiere und erkläre"
 global B2 := ""
-global BF := ""
+global B3 := ""
 
 global C0 := "Prüfe Richtigkeit"
 global C1 := "Prüfe die Richtigkeit und begründe deine Einschätzung"
 global C2 := ""
-global CF := ""
+global C3 := ""
 
 global D0 := "Definiere"
 global D1 := "Definiere"
 global D2 := ""
-global DF := ""
+global D3 := ""
 
-global E0 := "Erkläre"
+global E0 := "Erkläre einfach"
 global E1 := "Erkläre einfach und leicht verständlich"
 global E2 := ""
-global EF := ""
+global E3 := ""
 
 global F0 := "Formuliere besser"
 global F1 := "Formuliere folgenden Text besser (in seiner Originalsprache)"
 global F2 := "Verbessere Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit unter Beibehaltung der ursprünglichen Sprache und des Formalitätsgrads. Verwende aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". Schreibe nur die verbesserte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
-global FF := "writing"
+global F3 := "writing"
 
 global G0 := "Prüfe Grammatik usw."
 global G1 := "Prüfe Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit des folgenden Textes"
 global G2 := "Gib mir konkrete Verbesserungsvorschläge und erläutere sie mir. Bevorzuge aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
-global GF := "writing"
+global G3 := "writing"
 
 global Q0 := "Perplexity…"
 global Q1 := ""
 global Q2 := ""
-global QF := ""
+global Q3 := ""
 
 global R0 := "Recherchiere"
 global R1 := "Recherchiere zu folgendem Thema"
 global R2 := ""
-global RF := ""
+global R3 := ""
 
 global S0 := "Fasse zusammen"
 global S1 := "Fasse zusammen"
 global S2 := ""
-global SF := ""
+global S3 := ""
 
 global T0 := "Übersetze"
 global T1 := "Übersetze den folgenden Text ins Deutsche oder aus dem Deutschen"
 global T2 := "Schreibe nur die Übersetzung des mit <text>-Tags umgebenen Texts, sonst nichts, auch keine Grußformel. Behalte die ursprüngliche Formatierung und Struktur bei, mit Ausnahme der <text>-Tags. ÜBERSETZE ZWISCHEN DEUTSCH UND ENGLISCH, ES SEI DENN, EINE ANDERE SPRACHE WIRD AUSDRÜCKLICH GEWÜNSCHT."
-global TF := "writing"
+global T3 := "writing"
 
 global V0 := "Verdeutliche/Vereinfache"
 global V1 := "Verdeutliche und vereinfache folgenden Text sprachlich"
 global V2 := "Schreibe nur die verdeutlichte und vereinfachte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
-global VF := "writing"
+global V3 := "writing"
 
 global W0 := "Was ist"
 global W1 := "Was ist"
 global W2 := ""
-global WF := ""
+global W3 := ""
 
 global X0 := "Verfasse Absage"
 global X1 := "Verfasse eine verneinende/ablehnende Antwort/Absage auf folgenden Text"
 global X2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
-global XF := "writing"
+global X3 := "writing"
 
 global YorZ := "Y"
 
 global Y0 := "Verfasse Zusage"
 global Y1 := "Verfasse eine bejahende/zustimmende Antwort/Zusage auf folgenden Text"
 global Y2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
-global YF := "writing"
+global Y3 := "writing"
 
 ; Secondary Hotkeys
 
 global H0 := ""
 global H1 := ""
 global H2 := ""
-global HF := ""
+global H3 := ""
 
 global I0 := ""
 global I1 := ""
 global I2 := ""
-global IF := ""
+global I3 := ""
 
 global J0 := ""
 global J1 := ""
 global J2 := ""
-global JF := ""
+global J3 := ""
 
 global K0 := ""
 global K1 := ""
 global K2 := ""
-global KF := ""
+global K3 := ""
 
 global L0 := ""
 global L1 := ""
 global L2 := ""
-global LF := ""
+global L3 := ""
 
 global M0 := ""
 global M1 := ""
 global M2 := ""
-global MF := ""
+global M3 := ""
 
 global N0 := ""
 global N1 := ""
 global N2 := ""
-global NF := ""
+global N3 := ""
 
 global O0 := ""
 global O1 := ""
 global O2 := ""
-global OF := ""
+global O3 := ""
 
 global P0 := ""
 global P1 := ""
 global P2 := ""
-global PF := ""
+global P3 := ""
 
 global U0 := ""
 global U1 := ""
 global U2 := ""
-global UF := ""
+global U3 := ""
 
 global Z0 := ""
 global Z1 := ""
 global Z2 := ""
-global ZF := ""
+global Z3 := ""
 
 ; ------------------------------------------------------------------------------
 ; Default (German) URLs
@@ -355,8 +364,17 @@ global URL_DICTIONARY := "https://www.duden.de/"
 global URL_DICTIONARY_SEARCH := "https://www.duden.de/suchen/dudenonline/"
 global URL_GOOGLE := "https://www.google.de/"
 global URL_GOOGLE_SEARCH := "https://www.google.de/search?q="
-global URL_TRANSLATOR := "https://www.deepl.com/"
-global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/translator#auto/auto/"
+
+; FIXME: Disabled DeepL due to OpenResty's inability to handle URL-encoded
+; newlines (%0A) in request URLs, which results in 404 Not Found errors.
+;global URL_TRANSLATOR := "https://www.deepl.com/"
+;;global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/translator#auto/auto/"
+;global URL_TRANSLATOR_SEARCH := "https://www.deepl.com/de/translator/q/auto/%s/auto/"
+; Falling back to Google Translate until this is fixed.
+global URL_TRANSLATOR := "https://translate.google.de/"
+;global URL_TRANSLATOR_SEARCH := "https://translate.google.de/#auto/auto/"
+global URL_TRANSLATOR_SEARCH := "https://translate.google.de/?sl=auto&tl=auto&text=%s&op=translate"
+
 global URL_WIKIPEDIA := "https://de.wikipedia.org/"
 global URL_WIKIPEDIA_SEARCH := "https://de.wikipedia.org/w/index.php?search="
 
@@ -386,8 +404,10 @@ global SUFFIX := ""
 ; Default Settings
 
 global CapsLockHotkeys := true
-global QueryEditor := true
+global CapsLockOff := true
 global Pro := "auto"
+global QueryEditor := true
+global StartupHelpDuration := 5
 global UseDarkTheme := "auto"
 
 ; Win Hotkeys
@@ -424,134 +444,17 @@ if (WinHotkey_Wikipedia) {
     Hotkey, #%WinHotkey_Wikipedia%, Wikipedia_Hotkey ; Default: Win+W
 }
 
+; ------------------------------------------------------------------------------
+; Show Startup Help
+; ------------------------------------------------------------------------------
+
+ShowStartupHelp()
+
 
 
 ; ==============================================================================
 ; Functions
 ; ==============================================================================
-
-; ------------------------------------------------------------------------------
-; Use Dark Theme
-; ------------------------------------------------------------------------------
-
-UseDarkTheme() {
-    if (UseDarkTheme != "auto")
-        return (UseDarkTheme = "1" || UseDarkTheme = "true")
-
-    try {
-        RegRead, AppsUseLightTheme, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme
-        return (AppsUseLightTheme == 0)
-    } catch {
-        return false ; Default to false if unable to read the registry
-    }
-}
-
-; ------------------------------------------------------------------------------
-; Help
-; ------------------------------------------------------------------------------
-
-Help()
-{
-    local letter
-
-    ; AI-Hotkeys Version
-    HelpText := "AI-Hotkeys Version " . Version . "`n"
-
-#If (QueryEditor)
-
-    ; Query Editor Hotkeys
-    HelpText .= "`nQuery Editor Hotkeys:`n"
-    HelpText .= "LWin+LAlt = Query Editor`n"
-
-#If
-
-#If (CapsLockHotkeys)
-
-    ; AI (Perplexity) Hotkeys
-    HelpText .= "`nAI (Perplexity) Hotkeys:`n"
-    Loop, 26 {
-        letter := Chr(A_Index + 64)  ; Convert to uppercase letter
-        titleVar := letter . "0"
-        if (%titleVar% != "") {
-            HelpText .= "CapsLock+" . letter . " = " . %titleVar% . "`n"
-        }
-    }
-
-    ; CapsLock Hotkeys
-    HelpText .= "`nCapsLock Hotkeys:`n"
-    HelpText .= "Ctrl+CapsLock = Toggle CapsLock`n"
-    HelpText .= "CapsLock+F1 = Help`n"
-    HelpText .= "CapsLock+F2 = Suspend Hotkeys`n"
-    HelpText .= "CapsLock+F3 = Pause Script`n"
-    HelpText .= "CapsLock+F4 = Exit`n"
-    HelpText .= "CapsLock+F5 = Reload Script`n"
-    HelpText .= "CapsLock+F12 = Edit Script`n"
-
-#If
-
-    ; Win Hotkeys
-    if (WinHotkey_Perplexity || WinHotkey_Dictionary || WinHotkey_Google || WinHotkey_Translator || WinHotkey_Wikipedia) {
-        HelpText .= "`nWin Hotkeys:`n"
-        if (WinHotkey_Perplexity)
-            HelpText .= "Win+" . Format("{:U}", WinHotkey_Perplexity) . " = Perplexity`n"
-        if (WinHotkey_Dictionary)
-            HelpText .= "Win+" . Format("{:U}", WinHotkey_Dictionary) . " = Dictionary`n"
-        if (WinHotkey_Google)
-            HelpText .= "Win+" . Format("{:U}", WinHotkey_Google) . " = Google`n"
-        if (WinHotkey_Translator)
-            HelpText .= "Win+" . Format("{:U}", WinHotkey_Translator) . " = Translator`n"
-        if (WinHotkey_Wikipedia)
-            HelpText .= "Win+" . Format("{:U}", WinHotkey_Wikipedia) . " = Wikipedia`n"
-    }
-
-    HelpText := RTrim(HelpText, "`n")
-
-    ; Calculate required height based on text content
-    StringReplace, HelpText, HelpText, `n, `n, UseErrorLevel
-    lineCount := ErrorLevel + 1  ; Number of lines (+1 because last line might not end with `n)
-    lineHeight := 13  ; Approximate height per line in pixels
-    padding := 10     ; Extra padding in pixels
-    totalHeight := (lineCount * lineHeight) + padding
-
-    ; Create GUI with custom buttons
-    Gui, Help:New, +AlwaysOnTop
-
-    if UseDarkTheme() { ; Dark theme colors
-        Gui, Color, 1E1E1E, 333333 ; Set dark background and control colors
-        Gui, Font, cSilver, Segoe UI ; Set light text color and font
-        Gui, +LastFound
-        WinSet, Transparent, 245
-        ; Force dark mode on the entire window
-        DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 19, "Int*", 1, "Int", 4)
-        DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 20, "Int*", 1, "Int", 4)
-    } else { ; Light theme colors
-        Gui, Color, FFFFFF, F0F0F0 ; Set light background and control colors
-        Gui, Font, cBlack, Segoe UI ; Set dark text color and font
-        Gui, +LastFound
-        WinSet, Transparent, 245
-    }
-
-    ; Calculate total width based on buttons (120 + 10 + 120 = 250 plus padding)
-    Gui, Help:Add, Edit, ReadOnly w250 h%totalHeight% vHelpText -VScroll +VScroll, %HelpText%
-    Gui, Help:Add, Button, gCopyHelp w120 h30, ➡️ Clipboard
-    Gui, Help:Add, Button, x+10 gCloseHelp w120 h30 +Default, % CLOSE_BUTTON_CAPTION
-    Gui, Help:Show,, %A_ScriptName% Help
-    ; Set focus to the Close button to prevent text selection
-    GuiControl, Focus, Button2
-
-    return
-
-    CopyHelp:
-        GuiControlGet, HelpText,, HelpText
-        Clipboard := HelpText
-        return
-
-    CloseHelp:
-    HelpGuiClose:
-    HelpGuiEscape:
-        Gui, Help:Destroy
-        return
-}
 
 ; ------------------------------------------------------------------------------
 ; Get Language
@@ -636,6 +539,192 @@ LoadCustomVariables() {
 }
 
 ; ------------------------------------------------------------------------------
+; Use Dark Theme
+; ------------------------------------------------------------------------------
+
+UseDarkTheme() {
+    if (UseDarkTheme != "auto")
+        return (UseDarkTheme = "1" || UseDarkTheme = "true")
+
+    try {
+        RegRead, AppsUseLightTheme, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme
+        return (AppsUseLightTheme == 0)
+    } catch {
+        return false ; Default to false if unable to read the registry
+    }
+}
+
+; ------------------------------------------------------------------------------
+; Help
+; ------------------------------------------------------------------------------
+
+Help()
+{
+    local letter
+
+    HelpText := ""
+
+#If (QueryEditor)
+
+    ; Query Editor Hotkeys
+    HelpText .= "`nQuery Editor Hotkeys:`n"
+    HelpText .= "LWin+LAlt = Query Editor`n"
+
+#If
+
+#If (CapsLockHotkeys)
+
+    ; AI (Perplexity) Hotkeys
+    HelpText .= "`nAI (Perplexity) Hotkeys:`n"
+    Loop, 26 {
+        letter := Chr(A_Index + 64)  ; Convert to uppercase letter
+        titleVar := letter . "0"
+        if (%titleVar% != "") {
+            HelpText .= "CapsLock+" . letter . " = " . %titleVar% . "`n"
+        }
+    }
+
+    ; CapsLock Hotkeys
+    HelpText .= "`nCapsLock Hotkeys:`n"
+    HelpText .= "Ctrl+CapsLock = Toggle CapsLock`n"
+    HelpText .= "CapsLock+F1 = Help`n"
+    HelpText .= "CapsLock+F2 = Suspend Hotkeys`n"
+    HelpText .= "CapsLock+F3 = Pause Script`n"
+    HelpText .= "CapsLock+F4 = Exit`n"
+    HelpText .= "CapsLock+F5 = Reload Script`n"
+    HelpText .= "CapsLock+F12 = Edit Script`n"
+
+#If
+
+    ; Win Hotkeys
+    if (WinHotkey_Perplexity || WinHotkey_Dictionary || WinHotkey_Google || WinHotkey_Translator || WinHotkey_Wikipedia) {
+        HelpText .= "`nWin Hotkeys:`n"
+        if (WinHotkey_Perplexity)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Perplexity) . " = Perplexity`n"
+        if (WinHotkey_Dictionary)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Dictionary) . " = Dictionary`n"
+        if (WinHotkey_Google)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Google) . " = Google`n"
+        if (WinHotkey_Translator)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Translator) . " = Translator`n"
+        if (WinHotkey_Wikipedia)
+            HelpText .= "Win+" . Format("{:U}", WinHotkey_Wikipedia) . " = Wikipedia`n"
+    }
+
+    HelpText := Trim(HelpText, "`n")
+
+    ; Calculate required height based on text content
+    StringReplace, HelpText, HelpText, `n, `n, UseErrorLevel
+    lineCount := ErrorLevel + 1  ; Number of lines (+1 because last line might not end with `n)
+    lineHeight := 17  ; Approximate height per line in pixels
+    padding := 10     ; Extra padding in pixels
+    totalHeight := (lineCount * lineHeight) + padding
+
+    ; Create GUI with custom buttons
+    Gui, Help:New, +AlwaysOnTop
+
+    if UseDarkTheme() { ; Dark theme colors
+        Gui, Color, 1E1E1E, 333333 ; Set dark background and control colors
+        Gui, Font, cSilver, Segoe UI ; Set light text color and font
+        Gui, +LastFound
+        WinSet, Transparent, 245
+        ; Force dark mode on the entire window
+        DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 19, "Int*", 1, "Int", 4)
+        DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 20, "Int*", 1, "Int", 4)
+    } else { ; Light theme colors
+        Gui, Color, FFFFFF, F0F0F0 ; Set light background and control colors
+        Gui, Font, cBlack, Segoe UI ; Set dark text color and font
+        Gui, +LastFound
+        WinSet, Transparent, 245
+    }
+
+    Gui, Font, s11 bold
+    Gui, Add, Text, , AI-Hotkeys Version %Version%
+    Gui, Font, s10 norm
+
+    Gui, Help:Add, Edit, ReadOnly w250 h%totalHeight% vHelpText -VScroll +VScroll, %HelpText%
+    Gui, Help:Add, Button, gCopyHelp w120 h30, ➡️ Clipboard
+    Gui, Help:Add, Button, x+10 gCloseHelp w120 h30 +Default, % CLOSE_BUTTON_CAPTION
+    Gui, Help:Show,, AI-Hotkeys Help
+
+    ; Set focus to the Close button to prevent text selection
+    GuiControl, Focus, Button2
+
+    return
+
+    CopyHelp:
+        GuiControlGet, HelpText,, HelpText
+        Clipboard := HelpText
+        return
+
+    CloseHelp:
+    HelpGuiClose:
+    HelpGuiEscape:
+        Gui, Help:Destroy
+        return
+}
+
+; ------------------------------------------------------------------------------
+; Show Startup Help
+; ------------------------------------------------------------------------------
+
+ShowStartupHelp() {
+    global StartupHelpDuration
+
+    ; Skip if duration is 0
+    if (StartupHelpDuration <= 0)
+        return
+
+    global startupHelpActive := true
+    global remainingSeconds := StartupHelpDuration
+
+    ; Show help dialog
+    Help()
+
+    ; Update the close button text every second
+    SetTimer, UpdateCountdown, 1000
+    return
+
+    UpdateCountdown:
+    if !startupHelpActive
+        return
+
+    if WinExist("AI-Hotkeys Help") {
+        MouseGetPos,,, mouseWin
+        WinGet, activeWin, ID, AI-Hotkeys Help
+
+        ; Check if window was manually triggered by hotkey
+        if (A_ThisHotkey = "SC03A & F1") {
+            SetTimer, UpdateCountdown, Off
+            ControlSetText, Button2, % CLOSE_BUTTON_CAPTION, AI-Hotkeys Help
+            startupHelpActive := false
+            return
+        }
+
+        ; Check for mouse interaction
+        if (mouseWin = activeWin) {
+            SetTimer, UpdateCountdown, Off
+            ControlSetText, Button2, % CLOSE_BUTTON_CAPTION, AI-Hotkeys Help
+            startupHelpActive := false
+            return
+        }
+
+        if (remainingSeconds > 0) {
+            ControlSetText, Button2, % RegExReplace(CLOSE_BUTTON_CAPTION, "\(.*\)$") "(" remainingSeconds ")", AI-Hotkeys Help
+            remainingSeconds--
+        } else {
+            WinClose, AI-Hotkeys Help
+            SetTimer, UpdateCountdown, Off
+            startupHelpActive := false
+        }
+    } else {
+        SetTimer, UpdateCountdown, Off
+        startupHelpActive := false
+    }
+    return
+}
+
+; ------------------------------------------------------------------------------
 ; URL Encode
 ; ------------------------------------------------------------------------------
 
@@ -670,6 +759,19 @@ UrlEncode(str) {
 }
 
 ; ------------------------------------------------------------------------------
+; Perplexity
+; ------------------------------------------------------------------------------
+
+Perplexity()
+{
+    Run, % URL_PERPLEXITY
+    Sleep, 1000
+    WinWait, Perplexity
+    WinActivate
+    return
+}
+
+; ------------------------------------------------------------------------------
 ; AI (Perplexity)
 ; ------------------------------------------------------------------------------
 
@@ -685,7 +787,7 @@ AI(hotkey := "")
     {
         task := %hotkey%1
         instructions := %hotkey%2
-        focus := %hotkey%F
+        focus := %hotkey%3
     }
 
     url := URL_PERPLEXITY
@@ -756,19 +858,6 @@ AI(hotkey := "")
 }
 
 ; ------------------------------------------------------------------------------
-; Perplexity
-; ------------------------------------------------------------------------------
-
-Perplexity()
-{
-    Run, % URL_PERPLEXITY
-    Sleep, 1000
-    WinWait, Perplexity
-    WinActivate
-    return
-}
-
-; ------------------------------------------------------------------------------
 ; Search (Wikipedia+URL=Web)
 ; ------------------------------------------------------------------------------
 
@@ -789,7 +878,15 @@ Search(Engine)
         if (Engine = "Wikipedia" && RegExMatch(Clipboard, "i)^(https?://|www\.)"))
             Run, % Clipboard
         else
-            Run, % %searchUrl% . UrlEncode(Clipboard)
+        {
+            searchTerm := UrlEncode(StrReplace(RTrim(Clipboard, "`n"), "`r"))
+            if (InStr(%searchUrl%, "%s"))
+                url := StrReplace(%searchUrl%, "%s", searchTerm)
+            else
+                url := %searchUrl% . searchTerm
+            ;MsgBox, url: %url%
+            Run, % url
+        }
     }
     else
         Run, % %baseUrl%
@@ -854,6 +951,13 @@ SC03A & F12::Edit
 AIHandler:
     AI(Trim(SubStr(A_ThisHotkey, -1)))  ; Extract and trim the letter from the hotkey
 return
+
+#If
+
+#If (CapsLockOff)
+
+; Use CapsLock to disable CapsLock
+SC03A::SetCapsLockState, AlwaysOff
 
 #If
 

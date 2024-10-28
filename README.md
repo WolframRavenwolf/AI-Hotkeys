@@ -8,7 +8,7 @@ Transform your CapsLock into an AI key! This AutoHotkey app puts powerful AI cap
 
 Whether you need to compose answers, conduct research, explain concepts, refine text, summarize information, translate content, or verify correctness, this app empowers you by putting powerful AI capabilities right at your fingertips, literally.
 
-With seamless integration to [Perplexity](https://www.perplexity.ai/) (and [DeepL](https://www.deepl.com/)), it enables you to effortlessly and swiftly solve complex tasks and streamline your workflow like never before.
+With seamless integration to [Perplexity](https://www.perplexity.ai/), it enables you to effortlessly and swiftly solve complex tasks and streamline your workflow like never before.
 
 ## Features
 
@@ -18,15 +18,21 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/) (and [Deep
 
   CapsLock serves as an ideal choice for AI hotkey combinations due to its accessibility, infrequent use in regular typing, and lack of conflict with existing shortcuts. This repurposing transforms it into a more valuable "AI key", enhancing overall user efficiency. The original CapsLock functionality remains accessible by pressing **Ctrl + CapsLock**, ensuring no loss of traditional features.
 
+  All letter keys on your keyboard serve as customizable hotkeys. You can easily configure them to execute your most frequent tasks with any prompt you choose.
+
 - **Win Hotkeys:** Perform web searches and other tasks with **Win + [Key]** combinations.
 
   While the AI features are the main focus, there are also a few additional hotkeys for quick searches and lookups using traditional online services like Google, Merriam-Webster's Dictionary, and Wikipedia.
 
-- **Query Editor:** Edit clipboard content with a sleek GUI, supporting both light and dark themes.
+- **Query Editor:** Edit your query with a sleek GUI, supporting both light and dark themes.
 
-   This powerful tool enables you to preview and modify clipboard content before transmitting it to Perplexity. It offers a user-friendly interface for refining your text or query prior to AI processing, while also displaying all available hotkeys within the GUI for quick reference.
+   This powerful tool enables you to preview and modify your query before sending it to Perplexity. It offers a user-friendly interface for refining your text prior to AI processing, while also displaying all available hotkeys within the GUI for quick reference and access.
 
-- **Customization:** Fully customizable through simple edits to a plaintext configuration file, allowing you to adapt all tasks and instructions to your preferences or language.
+- **Help:** Press **CapsLock+F1** to open the Help window.
+
+  The Help window displays the current version number and a complete list of active hotkeys. You can easily copy this list to your clipboard using the provided button.
+
+- **Customization:** Fully customizable through simple edits to a plaintext INI configuration file, allowing you to adapt all tasks and instructions to your preferences or language.
 
   🇺🇸 **English** and 🇩🇪 **German** prompts and URLs are included by default. (If your Windows language is set to German, the German version will automatically load.) Users can customize and translate any content as needed, though this may be unnecessary due to AI's multilingual comprehension capabilities.
 
@@ -102,7 +108,7 @@ While the various prompts are optimized for their respective tasks, they can be 
 | CapsLock + B   | Calculate/Convert  | Berechne/Konvertiere     |
 | CapsLock + C   | Check correctness  | Prüfe Richtigkeit        |
 | CapsLock + D   | Define             | Definiere                |
-| CapsLock + E   | Explain            | Erkläre                  |
+| CapsLock + E   | Explain simply     | Erkläre einfach          |
 | CapsLock + F   | Formulate better   | Formuliere besser        |
 | CapsLock + G   | Check grammar etc. | Prüfe Grammatik usw.     |
 | CapsLock + Q   | Query Perplexity…  | Perplexity…              |
@@ -137,11 +143,11 @@ Here's a detailed overview of each shortcut with some tips on how to use them mo
 
 - Writing anything important? Use **Clarify (CapsLock + V)** to ask the AI to clarify a sentence, simplify it, or improve it in other ways. Get advice on grammar, spelling, style, tone, and comprehensibility with **Check grammar etc. (CapsLock + G)**. Or simply use **Formulate better (CapsLock + F)** if you want to effortlessly improve an entire text at once.
 
-  Alternatively, use **DeepL Translate (Win + T)** for even more powerful translation capabilities.
-
 - Reading a long article or document? Use **Summarize (CapsLock + S)** to get a summary or **Explain (CapsLock + E)** for a simple explanation. This, like all shortcuts, works by either selecting the text or, for online content, just the URL.
 
 - Got a text you want to translate? Use **Translate (CapsLock + T)** to translate it. If it's a message you want to respond to, write your reply (or use an answer shortcut for that, too) and let the AI translate it for you as well.
+
+  Alternatively, use **Google Translate (Win + T)** for additional translation capabilities.
 
 - **What is (CapsLock + W)** is a very versatile shortcut that can be used in many different contexts. Any term or concept you don't know can be looked up with it instantly. But it's not limited to just text, it can also be used to get information about files, URLs, etc. For example, select a file in Windows Explorer (such as an old download with a cryptic name that has long been forgotten in the Downloads folder, or an obscure system file with an unkown purpose) and use **What is** to get information about it. The AI analyzes only the file name and path - the file content is NEVER uploaded or accessed! Despite this limitation, the insights provided are often surprisingly accurate and informative.
 
@@ -151,13 +157,13 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
 
 ### Win Hotkeys
 
-| Hotkey         | 🇺🇸 Action                            | 🇩🇪 Aktion                           |
-| -------------- | ----------------------------------- | ---------------------------------- |
-| Win + Q        | Query Perplexity                    | Perplexity-Anfrage                 |
-| Win + B        | Search Dictionary (Merriam-Webster) | Wörterbuch-Suche (Duden)           |
-| Win + G        | Search Google                       | Google-Suche                       |
-| Win + T        | Translate with DeepL                | DeepL-Übersetzer                   |
-| Win + W        | Search Wikipedia or open URL        | Wikipedia-Suche oder URL öffnen    |
+| Hotkey  | 🇺🇸 Action                            | 🇩🇪 Aktion                        |
+| ------- | ----------------------------------- | ------------------------------- |
+| Win + Q | Query Perplexity                    | Perplexity-Anfrage              |
+| Win + B | Search Dictionary (Merriam-Webster) | Wörterbuch-Suche (Duden)        |
+| Win + G | Search Google                       | Google-Suche                    |
+| Win + T | Google Translate                    | Google-Übersetzer               |
+| Win + W | Search Wikipedia or open URL        | Wikipedia-Suche oder URL öffnen |
 
 - **Query Perplexity (Win + Q):** Opens Perplexity and focuses the text input area, without sending anything automatically. This is useful when you want to:
 
@@ -173,23 +179,23 @@ Additionally, there are some Windows hotkeys for quick searches and lookups:
 
 - **Search Google (Win + G):** Searches Google.
 
-- **Translate with DeepL (Win + T):** Translates using DeepL. This is an alternative to **Perplexity Translate (CapsLock + T)**.
+- **Google Translate (Win + T):** Translates using Google. This is an alternative to **Perplexity Translate (CapsLock + T)**.
 
 - **Search Wikipedia or open URL (Win + W):** Searches Wikipedia. Alternatively, if a URL is selected or copied to the clipboard, it opens the link in your default web browser, which is useful when encountering non-clickable URLs in various contexts.
 
 ### Query Editor
 
-The Query Editor can be accessed using the following hotkey:
+The Query Editor (formerly known as Clipboard Editor) can be accessed using the following hotkeys:
 
 - **Alt + LWin** or **Win + LAlt**: Open/Close Query Editor
 
 When the Query Editor is open, you can use the following hotkeys:
 
-- **Alt + LWin** or **Win + LAlt** or **Alt + Enter**: Save
-- **Alt + Delete**: Clear
-- **Alt + Insert**: Restore
-- **Esc**: Exit
-- **Alt + Q** or **Ctrl + Enter**: Query Perplexity…
+- **Alt + LWin** or **Win + LAlt** or **Alt + Enter**: Save current content to clipboard
+- **Alt + Delete**: Clear current content
+- **Alt + Insert**: Restore previous clipboard content
+- **Esc**: Exit discarding any changes
+- **Ctrl + Enter**: Query Perplexity… (same as **Alt + Q** by default)
 
 The Query Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
 
