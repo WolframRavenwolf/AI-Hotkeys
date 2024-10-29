@@ -32,6 +32,8 @@ With seamless integration to [Perplexity](https://www.perplexity.ai/), it enable
 
   The Help window displays the current version number and a complete list of active hotkeys. You can easily copy this list to your clipboard using the provided button.
 
+  When the app starts, the Help window appears automatically for 5 seconds to remind you of the hotkeys. You can adjust the duration or disable it completely in the configuration file.
+
 - **Customization:** Fully customizable through simple edits to a plaintext INI configuration file, allowing you to adapt all tasks and instructions to your preferences or language.
 
   🇺🇸 **English** and 🇩🇪 **German** prompts and URLs are included by default. (If your Windows language is set to German, the German version will automatically load.) Users can customize and translate any content as needed, though this may be unnecessary due to AI's multilingual comprehension capabilities.
@@ -102,7 +104,7 @@ While the various prompts are optimized for their respective tasks, they can be 
 
 ![AI-Hotkeys-de](AI-Hotkeys-de.png)
 
-| Hotkey         | 🇺🇸 Action           | 🇩🇪 Aktion                 |
+| Hotkey         | 🇺🇸 Command          | 🇩🇪 Befehl                 |
 | -------------- | ------------------ | ------------------------ |
 | CapsLock + A   | Answer             | Verfasse Antwort         |
 | CapsLock + B   | Calculate/Convert  | Berechne/Konvertiere     |
@@ -219,8 +221,8 @@ To make changes, simply copy the file to your Documents folder and edit it there
 
 The `Pro` setting in the INI file controls how the app interacts with Perplexity's Pro features:
 
-- `Pro=true` (default): Always uses Pro search for all queries.
-- `Pro=auto`: Automatically determines whether to use Pro search based on the task, helping to conserve Pro searches for non-subscribers.
+- `Pro=auto` (default): Automatically determines whether to use Pro search based on the task, helping to conserve Pro searches for non-subscribers.
+- `Pro=true`: Always uses Pro search for all queries.
 - `Pro=false`: Never uses Pro search, suitable for non-subscribers or those who want to avoid using Pro searches automatically.
 
 This setting is particularly useful for non-Pro subscribers who want to limit their Pro search usage. You can adjust this in the `[Settings]` section of your INI file:
