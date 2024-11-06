@@ -59,28 +59,34 @@ Perplexity Pro is definitely worth the investment, especially once you've master
 
 ## Installation
 
-1. **Download and Run the Standalone Executable :**
-   - Head over to the [releases on GitHub](https://github.com/WolframRavenwolf/AI-Hotkeys/releases) and download the latest `.exe` file.
-     - Direct link to the latest release: [**AI-Hotkeys.exe**](https://github.com/WolframRavenwolf/AI-Hotkeys/releases/latest/download/AI-Hotkeys.exe)
-   - Run the `.exe` without needing to install anything.
-   - To have the app start automatically on login, place the `.exe` file (or a shortcut to it) in your Autostart folder:
-     - Open File Explorer and type `shell:startup` into the address bar, then press Enter.
-     - Copy the `.exe` file (or a shortcut to it) into the opened folder.
+1. **Automatic Setup (RECOMMENDED!): Download and Launch the Windows Installer:**
+   - Head over to the [releases on GitHub](https://github.com/WolframRavenwolf/AI-Hotkeys/releases) and download the latest `AI-Hotkeys-Setup.exe` file.
+     - Direct link to the latest release: [**AI-Hotkeys.exe**](https://github.com/WolframRavenwolf/AI-Hotkeys/releases/latest/download/AI-Hotkeys-Setup.exe)
+   - Run the `AI-Hotkeys-Setup.exe` to install the app.
+   - I highly recommend keeping the autostart option enabled and checking out the keyboard shortcut overview at the end. Use the convenient print button and place it next to your keyboard for quick reference. This is the best way to quickly familiarize yourself with all the hotkeys!
 
-2. **Alternative: Download and Install AutoHotkey:**
+2. **Manual Install: Download and Run the Standalone Executable:**
+   - Head over to the [releases on GitHub](https://github.com/WolframRavenwolf/AI-Hotkeys/releases) and download the latest `AI-Hotkeys.exe` file.
+     - Direct link to the latest release: [**AI-Hotkeys.exe**](https://github.com/WolframRavenwolf/AI-Hotkeys/releases/latest/download/AI-Hotkeys.exe)
+   - Run the `AI-Hotkeys.exe` without needing to install anything.
+   - To have the app start automatically on login, place the `AI-Hotkeys.exe` file (or a shortcut to it) in your Autostart folder:
+     - Open File Explorer and type `shell:startup` into the address bar, then press Enter.
+     - Copy the `AI-Hotkeys.exe` file (or a shortcut to it) into the opened folder.
+
+3. **Alternative: Download and Install AutoHotkey:**
    - Visit [AutoHotkey's official website](https://www.autohotkey.com/) and download version 1.1.
    - Install AutoHotkey v1.1 on your system.
    - Clone or download this repository to your local machine:
      ```sh
      git clone https://github.com/WolframRavenwolf/AI-Hotkeys.git
      ```
-     Or just download the `.ahk` file directly from GitHub.
+     Or just download the `AI-Hotkeys.ahk` file directly from GitHub.
    - Double-click `AI-Hotkeys.ahk` to run the app.
-   - To have the app start automatically on login, place the `.ahk` file (or a shortcut to it) in your Autostart folder:
+   - To have the app start automatically on login, place the `AI-Hotkeys.ahk` file (or a shortcut to it) in your Autostart folder:
      - Open File Explorer and type `shell:startup` into the address bar, then press Enter.
-     - Copy the `.ahk` file (or a shortcut to it) into the opened folder.
+     - Copy the `AI-Hotkeys.ahk` file (or a shortcut to it) into the opened folder.
 
-   **Note:** We use AutoHotkey v1.1 because it's more compatible with existing environments. If you already have AutoHotkey v2.0 installed or choose to install it, running the `.ahk` file will offer to download and install v1.1 alongside v2.0 for backward compatibility, without replacing your existing installation.
+   **Note:** We use AutoHotkey v1.1 because it's more compatible with existing environments. If you already have AutoHotkey v2.0 installed or choose to install it, running the `AI-Hotkeys.ahk` file will offer to download and install v1.1 alongside v2.0 for backward compatibility, without replacing your existing installation.
 
 ## Usage
 
@@ -98,11 +104,11 @@ While the various prompts are optimized for their respective tasks, they can be 
 
 🇺🇸 English Default Hotkeys:
 
-![AI-Hotkeys](AI-Hotkeys.png)
+![AI-Hotkeys](https://github.com/WolframRavenwolf/AI-Hotkeys/raw/main/AI-Hotkeys.png)
 
 🇩🇪 German Default Hotkeys:
 
-![AI-Hotkeys-de](AI-Hotkeys-de.png)
+![AI-Hotkeys-de](https://github.com/WolframRavenwolf/AI-Hotkeys/raw/main/AI-Hotkeys-de.png)
 
 | Hotkey         | 🇺🇸 Command          | 🇩🇪 Befehl                 |
 | -------------- | ------------------ | ------------------------ |
@@ -199,15 +205,15 @@ When the Query Editor is open, you can use the following hotkeys:
 - **Esc**: Exit discarding any changes
 - **Ctrl + Enter**: Query Perplexity… (same as **Alt + Q** by default)
 
-The Query Editor provides a convenient way to modify your text before sending it to AI services, allowing for more precise queries and edits.
+The Query Editor provides a convenient way to modify your text before sending it to Perplexity, allowing for more precise queries and control. It's also a great way to familiarize yourself with the hotkeys. Best of all, it lets you instantly start Perplexity chats from anywhere - no need to open a new browser tab!
 
 🇺🇸 English Query Editor:
 
-![AI-Hotkeys-QueryEditor](AI-Hotkeys-QueryEditor.png)
+![AI-Hotkeys-QueryEditor](https://github.com/WolframRavenwolf/AI-Hotkeys/raw/main/AI-Hotkeys-QueryEditor.png)
 
 🇩🇪 German Query Editor:
 
-![AI-Hotkeys-QueryEditor-de](AI-Hotkeys-QueryEditor-de.png)
+![AI-Hotkeys-QueryEditor-de](https://github.com/WolframRavenwolf/AI-Hotkeys/raw/main/AI-Hotkeys-QueryEditor-de.png)
 
 ## Customization
 
@@ -217,9 +223,9 @@ To make changes, simply copy the file to your Documents folder and edit it there
 
 🇩🇪 For German-speaking users, a localized version called `AI-Hotkeys-de.ini` is also available. On German Windows systems, this file will be automatically loaded when placed in your Documents folder or in the same directory as the executable.
 
-### Pro Setting
+### Pro Search Settings
 
-The `Pro` setting in the INI file controls how the app interacts with Perplexity's Pro features:
+The `Pro` setting in the INI file controls how the app interacts with Perplexity's Pro search:
 
 - `Pro=auto` (default): Automatically determines whether to use Pro search based on the task, helping to conserve Pro searches for non-subscribers.
 - `Pro=true`: Always uses Pro search for all queries.
@@ -231,6 +237,38 @@ This setting is particularly useful for non-Pro subscribers who want to limit th
 [Settings]
 Pro=auto  ; or true/false
 ```
+
+### Query Editor Settings
+
+The `QueryEditor` setting controls how the Query Editor window behaves:
+
+- `QueryEditor=tray` (default): The Query Editor minimizes to the system tray when closed, keeping your taskbar clean.
+- `QueryEditor=true`: The Query Editor stays in the taskbar like a regular window, as a reminder that it's always available.
+- `QueryEditor=false`: Disables the Query Editor functionality completely (don't do this, it's super useful!).
+
+You can adjust this in the `[Settings]` section of your INI file:
+
+```ini
+[Settings]
+QueryEditor=tray  ; or true/false
+```
+
+### Startup Help Display
+
+The `StartupHelp` setting controls whether and how long the Help window appears when launching the app:
+
+- `StartupHelp=X` (where X is seconds): Shows the Help window for X seconds when starting the app (default is 5 seconds), giving you a quick reminder of the hotkeys.
+- `StartupHelp=1`: Keeps the Help window permanently open on startup (doesn't close it automatically).
+- `StartupHelp=0`: Disables the automatic Help window display on startup (for when you've mastered the hotkeys and no longer need this reminder).
+
+You can adjust this in the `[Settings]` section of your INI file:
+
+```ini
+[Settings]
+StartupHelp=5  ; or any number of seconds, 1 for permanent, 0 for off
+```
+
+Remember that you can press **CapsLock+F1** at any time to open the Help window manually, which is useful if you've forgotten the hotkeys or need a quick reminder!
 
 ## A Personal Note
 

@@ -308,15 +308,15 @@
     </div>
 
     <div class="controls">
-      <button class="control-button" onclick="toggleLanguage('en')">🇺🇸</button>
-      <button class="control-button" onclick="window.print()">🖨️</button>
       <button class="control-button" onclick="toggleLanguage('de')">🇩🇪</button>
+      <button class="control-button" onclick="window.print()">🖨️</button>
+      <button class="control-button" onclick="toggleLanguage('en')">🇺🇸</button>
     </div>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      toggleLanguage('en');
+      toggleLanguage('de');
     });
 
     function toggleLanguage(lang) {

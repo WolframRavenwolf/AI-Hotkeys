@@ -1,8 +1,8 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.3.0.20241028 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.4.0.20241106 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
 
-Version = 1.3.0.20241028 ; ^^^^^^^^^^^^^^
+Version = 1.4.0.20241106 ; ^^^^^^^^^^^^^^
 
 ; This program is free software: you can redistribute it and/or modify
 ; it under the terms of the GNU General Public License as published by
@@ -35,6 +35,11 @@ global Language := GetLanguage()
 ; ------------------------------------------------------------------------------
 ; Default (English) Tasks and Instructions
 ; ------------------------------------------------------------------------------
+
+; X0 = Title
+; X1 = Task
+; X2 = Instructions
+; X3 = Focus
 
 ; Primary Hotkeys
 
@@ -200,8 +205,8 @@ global URL_WIKIPEDIA_SEARCH := "https://en.wikipedia.org/w/index.php?search="
 ; ------------------------------------------------------------------------------
 
 global CLOSE_BUTTON_CAPTION := "❌ Close (Esc)"
-global CLEAR_BUTTON_CAPTION := "❎ Clear (Alt+BS/Del)"
-global RESTORE_BUTTON_CAPTION := "🔄 Restore (Alt+``/Ins)"
+global CLEAR_BUTTON_CAPTION := "❎ Clear (Alt+Del)"
+global RESTORE_BUTTON_CAPTION := "🔄 Restore (Alt+Ins)"
 global SAVE_BUTTON_CAPTION := "✅ Save (Alt+Enter)"
 global SEND_BUTTON_CAPTION := "✔️ Send (Ctrl+Enter)"
 
@@ -218,6 +223,11 @@ if (Language = "de") {
 ; ------------------------------------------------------------------------------
 ; Default (German) Tasks and Instructions
 ; ------------------------------------------------------------------------------
+
+; X0 = Titel
+; X1 = Aufgabe
+; X2 = Anweisungen
+; X3 = Fokus
 
 ; Primary Hotkeys
 
@@ -383,8 +393,8 @@ global URL_WIKIPEDIA_SEARCH := "https://de.wikipedia.org/w/index.php?search="
 ; ------------------------------------------------------------------------------
 
 global CLOSE_BUTTON_CAPTION := "❌ Schließen (Esc)"
-global CLEAR_BUTTON_CAPTION := "❎ Löschen (Alt+RT/Entf)"
-global RESTORE_BUTTON_CAPTION := "🔄 Wiederher. (Alt+^/Einfg)"
+global CLEAR_BUTTON_CAPTION := "❎ Löschen (Alt+Entf)"
+global RESTORE_BUTTON_CAPTION := "🔄 Wiederher. (Alt+Einfg)"
 global SAVE_BUTTON_CAPTION := "✅ Speichern (Alt+Enter)"
 global SEND_BUTTON_CAPTION := "✔️ Senden (Strg+Enter)"
 
@@ -403,20 +413,20 @@ global SUFFIX := ""
 
 ; Default Settings
 
-global CapsLockHotkeys := true
-global CapsLockOff := true
-global Pro := "auto"
-global QueryEditor := true
-global StartupHelpDuration := 5
-global UseDarkTheme := "auto"
+global CapsLockHotkeys     := true    ; AI (Perplexity) Hotkeys + CapsLock Hotkeys
+global CapsLockOff         := true    ; Use CapsLock to disable CapsLock
+global Pro                 := "auto"  ; Pro Search: auto = only for non-writing tasks, true = always, false = never
+global QueryEditor         := "tray"  ; Query Editor: tray = keep in tray, true = keep in taskbar, false = off
+global StartupHelp         := 5       ; Show help on startup: show for X seconds, 1 = keep open permanently, 0 = off
+global UseDarkTheme        := "auto"  ; Theme: auto = system, true = dark, false = light
 
 ; Win Hotkeys
 
-global WinHotkey_Perplexity := "q"
-global WinHotkey_Dictionary := "b"
-global WinHotkey_Google := "g"
-global WinHotkey_Translator := "t"
-global WinHotkey_Wikipedia := "w"
+global WinHotkey_Perplexity := "Q"
+global WinHotkey_Dictionary := "B"
+global WinHotkey_Google     := "G"
+global WinHotkey_Translator := "T"
+global WinHotkey_Wikipedia  := "W"
 
 ; ------------------------------------------------------------------------------
 ; Load custom variables if an INI file exists in My Documents or in Script Dir
@@ -429,19 +439,27 @@ LoadCustomVariables()
 ; ------------------------------------------------------------------------------
 
 if (WinHotkey_Perplexity) {
-    Hotkey, #%WinHotkey_Perplexity%, Perplexity_Hotkey ; Default: Win+Q
+    Hotkey, #%WinHotkey_Perplexity%, Perplexity_Hotkey  ; Default: Win+Q
 }
 if (WinHotkey_Dictionary) {
-    Hotkey, #%WinHotkey_Dictionary%, Dictionary_Hotkey ; Default: Win+B
+    Hotkey, #%WinHotkey_Dictionary%, Dictionary_Hotkey  ; Default: Win+B
 }
 if (WinHotkey_Google) {
-    Hotkey, #%WinHotkey_Google%, Google_Hotkey ; Default: Win+G ⚠️ Remove Game Bar: Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
+    Hotkey, #%WinHotkey_Google%, Google_Hotkey  ; Default: Win+G ⚠️ Remove Game Bar: Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
 }
 if (WinHotkey_Translator) {
-    Hotkey, #%WinHotkey_Translator%, Translator_Hotkey ; Default: Win+T
+    Hotkey, #%WinHotkey_Translator%, Translator_Hotkey  ; Default: Win+T
 }
 if (WinHotkey_Wikipedia) {
-    Hotkey, #%WinHotkey_Wikipedia%, Wikipedia_Hotkey ; Default: Win+W
+    Hotkey, #%WinHotkey_Wikipedia%, Wikipedia_Hotkey  ; Default: Win+W
+}
+
+; ------------------------------------------------------------------------------
+; Create Minimized Query Editor
+; ------------------------------------------------------------------------------
+
+if (QueryEditor && QueryEditor != "tray") {
+        CreateQueryEditorGui()
 }
 
 ; ------------------------------------------------------------------------------
@@ -465,10 +483,10 @@ GetLanguage() {
     langID := DllCall("GetSystemDefaultUILanguage", "UInt")
     SetFormat, Integer, D
 
-    Language := "" ; Default (English)
-    if (langID = 0x0407 or langID = 0x0c07 or langID = 0x0807) ; German (Germany, Austria, Switzerland)
-        Language := "de" ; German
-    ;else if (langID = 0x0409 or langID = 0x0809) ; English (United States, United Kingdom)
+    Language := ""  ; Default (English)
+    if (langID = 0x0407 or langID = 0x0c07 or langID = 0x0807)  ; German (Germany, Austria, Switzerland)
+        Language := "de"  ; German
+    ;else if (langID = 0x0409 or langID = 0x0809)  ; English (United States, United Kingdom)
     ;    Language := "en"
     ; ...
 
@@ -522,18 +540,25 @@ LoadCustomVariables() {
     FileRead, fileContent, %iniFile%
     Loop, Parse, fileContent, `n, `r
     {
-        if (A_LoopField != "" && !RegExMatch(A_LoopField, "^\[.*\]$"))
+        ; Skip empty lines and comments (lines starting with ; or #)
+        if (A_LoopField = "" || RegExMatch(A_LoopField, "^\s*[;#]"))
+            continue
+
+        ; Skip section headers [section]
+        if (RegExMatch(A_LoopField, "^\[.*\]$"))
+            continue
+
+        StringSplit, parts, A_LoopField, =, %A_Space%%A_Tab%
+        if (parts0 == 2)
         {
-            StringSplit, parts, A_LoopField, =, %A_Space%%A_Tab%
-            if (parts0 == 2)
-            {
-                key := parts1
-                value := StrReplace(RegExReplace(parts2, "^""(.*)""$", "$1"), "\n", "`n")
-                if (value = "0" || value = "false")
-                    %key% := false
-                else
-                    %key% := value
-            }
+            key := parts1
+            value := StrReplace(RegExReplace(parts2, "^""(.*)""$", "$1"), "\n", "`n")
+            if (value = "0" || value = "false")
+                %key% := false
+            else if (value = "1" || value = "true")
+                %key% := true
+            else
+                %key% := value
         }
     }
 }
@@ -544,13 +569,13 @@ LoadCustomVariables() {
 
 UseDarkTheme() {
     if (UseDarkTheme != "auto")
-        return (UseDarkTheme = "1" || UseDarkTheme = "true")
+        return UseDarkTheme
 
     try {
         RegRead, AppsUseLightTheme, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme
         return (AppsUseLightTheme == 0)
     } catch {
-        return false ; Default to false if unable to read the registry
+        return false  ; Default to false if unable to read the registry
     }
 }
 
@@ -564,16 +589,13 @@ Help()
 
     HelpText := ""
 
-#If (QueryEditor)
-
+    if (QueryEditor) {
     ; Query Editor Hotkeys
     HelpText .= "`nQuery Editor Hotkeys:`n"
     HelpText .= "LWin+LAlt = Query Editor`n"
+    }
 
-#If
-
-#If (CapsLockHotkeys)
-
+    if (CapsLockHotkeys) {
     ; AI (Perplexity) Hotkeys
     HelpText .= "`nAI (Perplexity) Hotkeys:`n"
     Loop, 26 {
@@ -593,8 +615,7 @@ Help()
     HelpText .= "CapsLock+F4 = Exit`n"
     HelpText .= "CapsLock+F5 = Reload Script`n"
     HelpText .= "CapsLock+F12 = Edit Script`n"
-
-#If
+    }
 
     ; Win Hotkeys
     if (WinHotkey_Perplexity || WinHotkey_Dictionary || WinHotkey_Google || WinHotkey_Translator || WinHotkey_Wikipedia) {
@@ -611,29 +632,38 @@ Help()
             HelpText .= "Win+" . Format("{:U}", WinHotkey_Wikipedia) . " = Wikipedia`n"
     }
 
+    ; Settings
+    ;HelpText .= "`nSettings:`n"
+    ;HelpText .= "CapsLockHotkeys = " . (CapsLockHotkeys = 1 ? "true" : CapsLockHotkeys = 0 ? "false" : CapsLockHotkeys) . "`n"
+    ;HelpText .= "CapsLockOff = " . (CapsLockOff = 1 ? "true" : CapsLockOff = 0 ? "false" : CapsLockOff) . "`n"
+    ;HelpText .= "Pro = " . (Pro = 1 ? "true" : Pro = 0 ? "false" : Pro) . "`n"
+    ;HelpText .= "QueryEditor = " . (QueryEditor = 1 ? "true" : QueryEditor = 0 ? "false" : QueryEditor) . "`n"
+    ;HelpText .= "StartupHelp = " . (StartupHelp = 1 ? "true" : StartupHelp = 0 ? "false" : StartupHelp) . "`n"
+    ;HelpText .= "UseDarkTheme = " . (UseDarkTheme = 1 ? "true" : UseDarkTheme = 0 ? "false" : UseDarkTheme) . "`n"
+
     HelpText := Trim(HelpText, "`n")
 
     ; Calculate required height based on text content
     StringReplace, HelpText, HelpText, `n, `n, UseErrorLevel
     lineCount := ErrorLevel + 1  ; Number of lines (+1 because last line might not end with `n)
     lineHeight := 17  ; Approximate height per line in pixels
-    padding := 10     ; Extra padding in pixels
+    padding := 10  ; Extra padding in pixels
     totalHeight := (lineCount * lineHeight) + padding
 
     ; Create GUI with custom buttons
     Gui, Help:New, +AlwaysOnTop
 
-    if UseDarkTheme() { ; Dark theme colors
-        Gui, Color, 1E1E1E, 333333 ; Set dark background and control colors
-        Gui, Font, cSilver, Segoe UI ; Set light text color and font
+    if UseDarkTheme() {  ; Dark theme colors
+        Gui, Color, 1E1E1E, 333333  ; Set dark background and control colors
+        Gui, Font, cSilver, Segoe UI  ; Set light text color and font
         Gui, +LastFound
         WinSet, Transparent, 245
         ; Force dark mode on the entire window
         DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 19, "Int*", 1, "Int", 4)
         DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 20, "Int*", 1, "Int", 4)
-    } else { ; Light theme colors
-        Gui, Color, FFFFFF, F0F0F0 ; Set light background and control colors
-        Gui, Font, cBlack, Segoe UI ; Set dark text color and font
+    } else {  ; Light theme colors
+        Gui, Color, FFFFFF, F0F0F0  ; Set light background and control colors
+        Gui, Font, cBlack, Segoe UI  ; Set dark text color and font
         Gui, +LastFound
         WinSet, Transparent, 245
     }
@@ -669,17 +699,21 @@ Help()
 ; ------------------------------------------------------------------------------
 
 ShowStartupHelp() {
-    global StartupHelpDuration
+    global StartupHelp
 
-    ; Skip if duration is 0
-    if (StartupHelpDuration <= 0)
+    ; Skip if StartupHelp is 0
+    if (StartupHelp <= 0)
         return
-
-    global startupHelpActive := true
-    global remainingSeconds := StartupHelpDuration
 
     ; Show help dialog
     Help()
+
+    ; Keep help dialog open permanently if StartupHelp is 1
+    if (StartupHelp = 1)
+        return
+
+    global startupHelpActive := true
+    global remainingSeconds := StartupHelp
 
     ; Update the close button text every second
     SetTimer, UpdateCountdown, 1000
@@ -725,6 +759,23 @@ ShowStartupHelp() {
 }
 
 ; ------------------------------------------------------------------------------
+; Get Selected Or Clipboard Text
+; ------------------------------------------------------------------------------
+
+GetSelectedOrClipboardText() {
+    ClipboardOld := ClipboardAll
+    Clipboard := ""
+    Send, ^c
+    ClipWait, 0.5
+    if (ErrorLevel)
+        Clipboard := ClipboardOld
+    text := Clipboard
+    Clipboard := ClipboardOld
+    ClipboardOld := ""
+    return text
+}
+
+; ------------------------------------------------------------------------------
 ; URL Encode
 ; ------------------------------------------------------------------------------
 
@@ -742,13 +793,13 @@ UrlEncode(str) {
         code := NumGet(var, A_Index - 1, "UChar")
         if (!code)
             break
-        if (code >= 0x30 && code <= 0x39 ; 0-9
-            || code >= 0x41 && code <= 0x5A ; A-Z
-            || code >= 0x61 && code <= 0x7A ; a-z
-            || code = 0x2D ; -
-            || code = 0x2E ; .
-            || code = 0x5F ; _
-            || code = 0x7E) ; ~
+        if (code >= 0x30 && code <= 0x39  ; 0-9
+            || code >= 0x41 && code <= 0x5A  ; A-Z
+            || code >= 0x61 && code <= 0x7A  ; a-z
+            || code = 0x2D  ; -
+            || code = 0x2E  ; .
+            || code = 0x5F  ; _
+            || code = 0x7E)  ; ~
             encoded .= Chr(code)
         else
             encoded .= "%" . SubStr(code + 0x100, -1)
@@ -775,9 +826,11 @@ Perplexity()
 ; AI (Perplexity)
 ; ------------------------------------------------------------------------------
 
-AI(hotkey := "")
+AI(hotkey := "", query := "")
 {
     ;MsgBox, Hotkey: %hotkey%
+
+    url := URL_PERPLEXITY
 
     task := ""
     instructions := ""
@@ -790,16 +843,10 @@ AI(hotkey := "")
         focus := %hotkey%3
     }
 
-    url := URL_PERPLEXITY
+    if (query == "")
+        query := GetSelectedOrClipboardText()
 
-    ClipboardOld := ClipboardAll
-    Clipboard := ""
-    Send, ^c
-    ClipWait, 0.5
-    if (ErrorLevel)
-        Clipboard := ClipboardOld
-
-    if (Clipboard)
+    if (query != "")
     {
         prompt := ""
 
@@ -811,12 +858,12 @@ AI(hotkey := "")
             prompt .= task . ":`n`n"
             if (instructions != "")
                 prompt .= "<text>`n"
-            prompt .= Clipboard
+            prompt .= query
             if (instructions != "")
                 prompt .= "`n</text>`n`n" . instructions
         }
         else
-            prompt .= Clipboard
+            prompt .= query
 
         if (SUFFIX != "")
             prompt .= SUFFIX
@@ -828,7 +875,7 @@ AI(hotkey := "")
         if (focus != "")
             url .= "focus=" . focus . "&"
 
-        if (Pro = "1" || Pro = "true" || (Pro = "auto" && focus != "writing"))
+        if (Pro && !(Pro = "auto" && focus = "writing"))
             url .= "pro=true&"
 
         url .= "q=" . UrlEncode(prompt)
@@ -839,20 +886,20 @@ AI(hotkey := "")
     if (StrLen(url) > 16384) {
         ;MsgBox, 48, 414 Request-URI Too Large, % StrLen(url) . " > 16384"
 
-        Clipboard := prompt
-        Sleep, 1000
         Perplexity()
+        ClipboardOld := ClipboardAll
+        Clipboard := prompt
         Sleep, 1000
         Send, ^v
         Sleep, 1000
+        Clipboard := ClipboardOld
+        ClipboardOld := ""
         Send, .
         Sleep, 1000
         Send, {Enter}
     } else {
         Run, % url
     }
-
-    Clipboard := ClipboardOld
 
     return
 }
@@ -863,35 +910,31 @@ AI(hotkey := "")
 
 Search(Engine)
 {
-    ClipboardOld := ClipboardAll
-    Clipboard := ""
-    Send, ^c
-    ClipWait, 0.5
-    if (ErrorLevel)
-        Clipboard := ClipboardOld
-
     baseUrl := "URL_" . Format("{:U}", Engine)
     searchUrl := "URL_" . Format("{:U}", Engine) . "_SEARCH"
 
-    if (Clipboard)
+    query := GetSelectedOrClipboardText()
+
+    if (query)
     {
-        if (Engine = "Wikipedia" && RegExMatch(Clipboard, "i)^(https?://|www\.)"))
-            Run, % Clipboard
+        if (Engine = "Wikipedia" && RegExMatch(query, "i)^(https?://|www\.)"))
+            Run, % query
         else
         {
-            searchTerm := UrlEncode(StrReplace(RTrim(Clipboard, "`n"), "`r"))
+            searchTerm := UrlEncode(StrReplace(RTrim(query, "`n"), "`r"))
             if (InStr(%searchUrl%, "%s"))
                 url := StrReplace(%searchUrl%, "%s", searchTerm)
             else
                 url := %searchUrl% . searchTerm
+
             ;MsgBox, url: %url%
+
             Run, % url
         }
     }
     else
         Run, % %baseUrl%
 
-    Clipboard := ClipboardOld
     return
 }
 
@@ -953,6 +996,12 @@ AIHandler:
 return
 
 #If
+
+
+
+; ==============================================================================
+; CapsLock Off
+; ==============================================================================
 
 #If (CapsLockOff)
 
@@ -1018,52 +1067,93 @@ return
 
 !LWin::
 #LAlt::
-    IfWinExist AI-Hotkeys Query Editor
+    Gosub, ToggleQueryEditor
+return
+
+; ------------------------------------------------------------------------------
+; Toggle Query Editor
+; ------------------------------------------------------------------------------
+
+ToggleQueryEditor:
+    ; Minimize or close Query Editor window if it is active
+    IfWinActive AI-Hotkeys Query Editor
     {
-        Gui, Submit, NoHide
-        Gui, Destroy
+        if (QueryEditor != "tray") {
+            Gui, Minimize
+        } else {
+            Clipboard := GetQueryFromEditor()
+            Gui, Destroy
+        }
         return
     }
 
-    OldClipboard := Clipboard
-    OldClipboardAll := ClipboardAll
-    Clipboard := ""
-    Send, ^c
-    ClipWait, 0.5
-    if (ErrorLevel)
-        Clipboard := OldClipboardAll
+    ; Create or activate Query Editor window
+    IfWinNotExist AI-Hotkeys Query Editor
+    {
+        CreateQueryEditorGui()
+    } else {
+        GuiControl,, %ClipboardEdit%, % GetSelectedOrClipboardText()
+        WinActivate, AI-Hotkeys Query Editor
+    }
 
-    if UseDarkTheme() { ; Dark theme colors
-        Gui, Color, 1E1E1E, 333333 ; Set dark background and control colors
-        Gui, Font, cSilver, Segoe UI ; Set light text color and font
+    ; Center window on active monitor
+    CenterQueryEditorWindow()
+return
+
+; ------------------------------------------------------------------------------
+; Create Query Editor GUI
+; ------------------------------------------------------------------------------
+
+CreateQueryEditorGui() {
+    global  ; Make variables accessible
+
+    ; Set theme
+    if UseDarkTheme() {  ; Dark theme colors
+        Gui, Color, 1E1E1E, 333333  ; Set dark background and control colors
+        Gui, Font, cSilver, Segoe UI  ; Set light text color and font
         Gui, +LastFound
         WinSet, Transparent, 245
         ; Force dark mode on the entire window
         DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 19, "Int*", 1, "Int", 4)
         DllCall("dwmapi\DwmSetWindowAttribute", "Ptr", WinExist(), "Int", 20, "Int*", 1, "Int", 4)
-    } else { ; Light theme colors
-        Gui, Color, FFFFFF, F0F0F0 ; Set light background and control colors
-        Gui, Font, cBlack, Segoe UI ; Set dark text color and font
+    } else {  ; Light theme colors
+        Gui, Color, FFFFFF, F0F0F0  ; Set light background and control colors
+        Gui, Font, cBlack, Segoe UI  ; Set dark text color and font
         Gui, +LastFound
         WinSet, Transparent, 245
     }
-    Gui, Font, s12 ; Set font size to 12
-    Gui, Add, Edit, hwndClipboardEdit vClipboard w620 h340, %Clipboard%
-    Gui, Font, s8 ; Set font size back to 8 (default)
+
+    ; Add controls
+    Gui, Font, s12  ; Set font size to 12
+    Gui, Add, Edit, hwndClipboardEdit vQueryEdit w620 h340, % GetSelectedOrClipboardText()
+    Gui, Font, s8  ; Set font size back to 8 (default)
     Loop, 15 {
-        Hotkey := SubStr("QWERTASDFG" . YorZ . "XCVB", A_Index, 1)
-        Gui, Add, Button, hwnd%Hotkey%Btn g%Hotkey%Action Left, % " &" . Hotkey . ": " . %Hotkey%0
+        hotkey := SubStr("QWERTASDFG" . YorZ . "XCVB", A_Index, 1)
+        Gui, Add, Button, hwnd%hotkey%Btn g%hotkey%Action Left, % " &" . hotkey . ": " . %hotkey%0
     }
+
+    ; Add main buttons
     Gui, Add, Button, hwndCloseBtn gGuiClose, % CLOSE_BUTTON_CAPTION
     Gui, Add, Button, hwndClearBtn gClear, % CLEAR_BUTTON_CAPTION
     Gui, Add, Button, hwndRestoreBtn gRestore, % RESTORE_BUTTON_CAPTION
     Gui, Add, Button, hwndSaveBtn gSave, % SAVE_BUTTON_CAPTION
     Gui, Add, Button, hwndSendBtn gSend, % SEND_BUTTON_CAPTION
-    Gui, +Resize
-    Gui, Show, w800 h600, AI-Hotkeys Query Editor ; 800x600
-    OnMessage(0x0005, "GuiSize") ; WM_SIZE message
 
-    ; Center window on active monitor
+    ; Show window
+    Gui, +Resize
+    Gui, Show, w800 h600, AI-Hotkeys Query Editor  ; 800x600
+    OnMessage(0x0005, "GuiSize")  ; WM_SIZE message
+
+    if (QueryEditor != "tray") {
+        Gui, Minimize
+    }
+}
+
+; ------------------------------------------------------------------------------
+; Center Query Editor Window
+; ------------------------------------------------------------------------------
+
+CenterQueryEditorWindow() {
     MouseGetPos, MouseX, MouseY
     SysGet, MonitorCount, MonitorCount
     Loop, %MonitorCount%
@@ -1076,14 +1166,31 @@ return
             break
         }
     }
-return
+}
+
+; ------------------------------------------------------------------------------
+; Get Query From Editor (Get the current content from the edit control)
+; ------------------------------------------------------------------------------
+
+GetQueryFromEditor() {
+    global QueryEdit
+
+    Gui, Submit, NoHide
+    return QueryEdit
+}
+
+; ------------------------------------------------------------------------------
+; Subroutines
+; ------------------------------------------------------------------------------
 
 GuiSize:
-    ;MsgBox, GuiSize
-    if (A_EventInfo == 1) ; The window has been minimized. No action needed.
+    if (A_EventInfo == 1)  ; The window has been minimized. No action needed.
         return
-    NewWidth := A_GuiWidth - 30 ; Adjusted to account for font size 12
-    NewHeight := A_GuiHeight - 140 ; Adjusted to account for action button rows
+
+    ;MsgBox, GuiSize
+
+    NewWidth := A_GuiWidth - 30  ; Adjusted to account for font size 12
+    NewHeight := A_GuiHeight - 140  ; Adjusted to account for action button rows
     GuiControl, Move, %ClipboardEdit%, w%NewWidth% h%NewHeight%
 
     ; Calculate positions for the AI action button rows
@@ -1095,7 +1202,7 @@ GuiSize:
     Margin := 10
     ButtonSpacing := 7
     TotalButtonWidth := A_GuiWidth - (2 * Margin) - (4 * ButtonSpacing)
-    ButtonWidth := TotalButtonWidth // 5 ; Divide available width by 5 for each button
+    ButtonWidth := TotalButtonWidth // 5  ; Divide available width by 5 for each button
     Loop, 5 {
         ButtonX := Margin + (A_Index - 1) * (ButtonWidth + ButtonSpacing)
         Hotkey1 := SubStr("QWERT", A_Index, 1)
@@ -1113,7 +1220,7 @@ GuiSize:
     Margin := 10
     ButtonSpacing := 7
     TotalButtonWidth := A_GuiWidth - (2 * Margin) - (4 * ButtonSpacing)
-    ButtonWidth := TotalButtonWidth // 5 ; Divide available width by 5 for each button
+    ButtonWidth := TotalButtonWidth // 5  ; Divide available width by 5 for each button
     ButtonX := Margin + 0 * (ButtonWidth + ButtonSpacing)
     GuiControl, Move, %CloseBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
     ButtonX := Margin + 1 * (ButtonWidth + ButtonSpacing)
@@ -1124,36 +1231,38 @@ GuiSize:
     GuiControl, Move, %SaveBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
     ButtonX := Margin + 4 * (ButtonWidth + ButtonSpacing)
     GuiControl, Move, %SendBtn%, x%ButtonX% y%ButtonY% w%ButtonWidth%
+
+    ControlFocus,, ahk_id %ClipboardEdit%
+    ControlSend,, ^a, ahk_id %ClipboardEdit%
 return
 
-GuiClose:  ; Do not rename this label, it's called by the GUI's close button (X)!
-    Gui, Destroy
-    Clipboard := OldClipboardAll
+GuiClose:  ; Do not rename this label, it's called by the GUI's close button (X)
+    if (QueryEditor != "tray") {
+        Gui, Minimize
+    } else {
+        Gui, Destroy
+    }
 return
 
 Clear:
-    ControlFocus,, ahk_id %ClipboardEdit%
     GuiControl,, %ClipboardEdit%
+    ControlFocus,, ahk_id %ClipboardEdit%
 return
 
 Restore:
+    GuiControl,, %ClipboardEdit%, % Clipboard
     ControlFocus,, ahk_id %ClipboardEdit%
-    Clipboard := OldClipboard
-    GuiControl,, %ClipboardEdit%, %Clipboard%
     ControlSend, , ^a, ahk_id %ClipboardEdit%
 return
 
 Save:
+    Clipboard := GetQueryFromEditor()
     ControlFocus,, ahk_id %ClipboardEdit%
-    Gui, Submit, NoHide
-    OldClipboard := Clipboard
-    OldClipboardAll := OldClipboard
 return
 
 Send:
-    Gui, Submit, NoHide
-    AI()
-    Gui, Destroy
+    AI("", GetQueryFromEditor())
+    Gosub, GuiClose
 return
 
 ; AI action functions for the AI action buttons
@@ -1173,41 +1282,37 @@ WAction:
 XAction:
 YAction:
 ZAction:
-    Gui, Submit, NoHide
     hotkey := SubStr(A_ThisLabel, 1, 1)
-    AI(hotkey)
-    Gui, Destroy
+    AI(hotkey, GetQueryFromEditor())
+    Gosub, GuiClose
 return
 
 #IfWinActive, AI-Hotkeys Query Editor
 
-; Close
-Esc:: ; Esc
+; Close (Esc)
+Esc::
     Gosub, GuiClose
 return
 
-; Clear
-!Backspace:: ; Alt+BS
-!Delete:: ; Alt+Del
+; Clear (Alt+Del)
+!Delete::
     Gosub, Clear
 return
 
-; Restore
-!`:: ; Alt+`
-!^:: ; Alt+^
-!Insert:: ; Alt+Ins
+; Restore (Alt+Ins)
+!Insert::
     Gosub, Restore
 return
 
-; Save
-!Enter:: ; Alt+Return
-!NumpadEnter:: ; Alt+Enter
+; Save (Alt+Enter)
+!Enter::
+!NumpadEnter::
     Gosub, Save
 return
 
-; Send
-^Enter:: ; Ctrl+Return
-^NumpadEnter:: ; Ctrl+Enter
+; Send (Ctrl+Enter)
+^Enter::
+^NumpadEnter::
     Gosub, Send
 return
 
