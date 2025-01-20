@@ -1,8 +1,8 @@
 ﻿;;;;;;;;;;;;;;;;;;
-; AI-Hotkeys.ahk ; Version 1.4.0.20241106 - Copyright (C) 2024 Wolfram Ravenwolf
+; AI-Hotkeys.ahk ; Version 1.4.1.20250120 - Copyright (C) 2024 Wolfram Ravenwolf
 ;;;;;;;;;;;;;;;;;;
 
-Version = 1.4.0.20241106 ; ^^^^^^^^^^^^^^
+Version = 1.4.1.20250120 ; ^^^^^^^^^^^^^^
 
 ; This program is free software: you can redistribute it and/or modify
 ; it under the terms of the GNU General Public License as published by
@@ -44,8 +44,8 @@ global Language := GetLanguage()
 ; Primary Hotkeys
 
 global A0 := "Answer"
-global A1 := "Compose an answer to the following text"
-global A2 := "Answer in my name. Maintain the language and level of formality. Write only the answer, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global A1 := "Compose an answer to the following text (in its original language, without web search)"
+global A2 := "Answer in my name. Maintain the language and level of formality. Write only the answer, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global A3 := "writing"
 
 global B0 := "Calculate/Convert"
@@ -69,13 +69,13 @@ global E2 := ""
 global E3 := ""
 
 global F0 := "Formulate better"
-global F1 := "Formulate the following text better (in its original language)"
-global F2 := "Improve grammar, spelling, style, tone and comprehensibility while maintaining the original language and level of formality. Use active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". Write only the improved version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global F1 := "Formulate the following text better (in its original language, without web search)"
+global F2 := "Improve grammar, spelling, style, tone and comprehensibility while maintaining the original language and level of formality. Use active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". Write only the improved version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global F3 := "writing"
 
 global G0 := "Check grammar etc."
-global G1 := "Check grammar, spelling, style, tone, and comprehensibility of the following text"
-global G2 := "Provide specific suggestions for improvement and explain them to me. Prefer active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global G1 := "Check grammar, spelling, style, tone, and comprehensibility of the following text (without web search)"
+global G2 := "Provide specific suggestions for improvement and explain them to me. Prefer active and direct, friendly and clear formulations instead of modal verbs in the subjunctive such as ""could"", ""should"" or ""would"". KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global G3 := "writing"
 
 global Q0 := "Query Perplexity…"
@@ -89,18 +89,18 @@ global R2 := ""
 global R3 := ""
 
 global S0 := "Summarize"
-global S1 := "Summarize"
-global S2 := ""
-global S3 := ""
+global S1 := "Summarize (without web search)"
+global S2 := "WITHOUT WEB SEARCH!"
+global S3 := "writing"
 
 global T0 := "Translate"
-global T1 := "Translate the following text to or from English"
-global T2 := "Write only the translation of the text enclosed in <text> tags, nothing else, not even a greeting. Maintain the original formatting and structure, except for the <text> tags. TRANSLATE BETWEEN GERMAN AND ENGLISH UNLESS ANOTHER LANGUAGE IS EXPLICITLY REQUESTED."
+global T1 := "Translate the following text to or from English (without web search)"
+global T2 := "Write only the translation of the text enclosed in <text> tags, nothing else, not even a greeting. Maintain the original formatting and structure, except for the <text> tags. TRANSLATE BETWEEN GERMAN AND ENGLISH UNLESS ANOTHER LANGUAGE IS EXPLICITLY REQUESTED! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global T3 := "writing"
 
 global V0 := "Clarify/Simplify"
-global V1 := "Clarify and simplify the following text linguistically"
-global V2 := "Write only the clarified and simplified version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global V1 := "Clarify and simplify the following text linguistically (in its original language, without web search)"
+global V2 := "Write only the clarified and simplified version, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global V3 := "writing"
 
 global W0 := "What is"
@@ -109,15 +109,15 @@ global W2 := ""
 global W3 := ""
 
 global X0 := "Reject"
-global X1 := "Compose a negative response/rejection to the following text"
-global X2 := "Answer in my name. Maintain the language and level of formality. Write only the rejection, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global X1 := "Compose a negative response/rejection to the following text (in its original language, without web search)"
+global X2 := "Answer in my name. Maintain the language and level of formality. Write only the rejection, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global X3 := "writing"
 
 global YorZ := "Z"
 
 global Z0 := "Accept"
-global Z1 := "Compose an affirmative response/acceptance to the following text"
-global Z2 := "Answer in my name. Maintain the language and level of formality. Write only the acceptance, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)!"
+global Z1 := "Compose an affirmative response/acceptance to the following text (in its original language, without web search)"
+global Z2 := "Answer in my name. Maintain the language and level of formality. Write only the acceptance, nothing else, not even a greeting. KEEP THE ORIGINAL LANGUAGE OF THE TEXT (E.G. ENGLISH OR GERMAN)! WITHOUT WEB SEARCH, WITHOUT SOURCE CITATIONS!"
 global Z3 := "writing"
 
 ; Secondary Hotkeys
@@ -218,7 +218,7 @@ global SEND_BUTTON_CAPTION := "✔️ Send (Ctrl+Enter)"
 
 if (Language = "de") {
 
-    ;MsgBox, Default (German) Variables
+    ;MsgBox, German
 
 ; ------------------------------------------------------------------------------
 ; Default (German) Tasks and Instructions
@@ -232,8 +232,8 @@ if (Language = "de") {
 ; Primary Hotkeys
 
 global A0 := "Verfasse Antwort"
-global A1 := "Verfasse eine Antwort auf folgenden Text"
-global A2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Antwort, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global A1 := "Verfasse eine Antwort auf folgenden Text (in seiner Originalsprache, ohne Websuche)"
+global A2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Antwort, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global A3 := "writing"
 
 global B0 := "Berechne/Konvertiere"
@@ -257,13 +257,13 @@ global E2 := ""
 global E3 := ""
 
 global F0 := "Formuliere besser"
-global F1 := "Formuliere folgenden Text besser (in seiner Originalsprache)"
-global F2 := "Verbessere Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit unter Beibehaltung der ursprünglichen Sprache und des Formalitätsgrads. Verwende aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". Schreibe nur die verbesserte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global F1 := "Formuliere folgenden Text besser (in seiner Originalsprache, ohne Websuche)"
+global F2 := "Verbessere Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit unter Beibehaltung der ursprünglichen Sprache und des Formalitätsgrads. Verwende aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". Schreibe nur die verbesserte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global F3 := "writing"
 
 global G0 := "Prüfe Grammatik usw."
-global G1 := "Prüfe Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit des folgenden Textes"
-global G2 := "Gib mir konkrete Verbesserungsvorschläge und erläutere sie mir. Bevorzuge aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global G1 := "Prüfe Grammatik, Rechtschreibung, Stil, Ton und Verständlichkeit des folgenden Textes (ohne Websuche)"
+global G2 := "Gib mir konkrete Verbesserungsvorschläge und erläutere sie mir. Bevorzuge aktive und direkte, freundliche und klare Formulierungen anstelle von Modalverben im Konjunktiv wie ""könnte"", ""müsste"", ""sollte"" oder ""würde"". BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global G3 := "writing"
 
 global Q0 := "Perplexity…"
@@ -277,18 +277,18 @@ global R2 := ""
 global R3 := ""
 
 global S0 := "Fasse zusammen"
-global S1 := "Fasse zusammen"
-global S2 := ""
-global S3 := ""
+global S1 := "Fasse zusammen (ohne Websuche)"
+global S2 := "OHNE WEBSUCHE!"
+global S3 := "writing"
 
 global T0 := "Übersetze"
-global T1 := "Übersetze den folgenden Text ins Deutsche oder aus dem Deutschen"
-global T2 := "Schreibe nur die Übersetzung des mit <text>-Tags umgebenen Texts, sonst nichts, auch keine Grußformel. Behalte die ursprüngliche Formatierung und Struktur bei, mit Ausnahme der <text>-Tags. ÜBERSETZE ZWISCHEN DEUTSCH UND ENGLISCH, ES SEI DENN, EINE ANDERE SPRACHE WIRD AUSDRÜCKLICH GEWÜNSCHT."
+global T1 := "Übersetze den folgenden Text ins Deutsche oder aus dem Deutschen (ohne Websuche)"
+global T2 := "Schreibe nur die Übersetzung des mit <text>-Tags umgebenen Texts, sonst nichts, auch keine Grußformel. Behalte die ursprüngliche Formatierung und Struktur bei, mit Ausnahme der <text>-Tags. ÜBERSETZE ZWISCHEN DEUTSCH UND ENGLISCH, ES SEI DENN, EINE ANDERE SPRACHE WIRD AUSDRÜCKLICH GEWÜNSCHT! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global T3 := "writing"
 
 global V0 := "Verdeutliche/Vereinfache"
-global V1 := "Verdeutliche und vereinfache folgenden Text sprachlich"
-global V2 := "Schreibe nur die verdeutlichte und vereinfachte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global V1 := "Verdeutliche und vereinfache folgenden Text sprachlich (in seiner Originalsprache, ohne Websuche)"
+global V2 := "Schreibe nur die verdeutlichte und vereinfachte Fassung, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global V3 := "writing"
 
 global W0 := "Was ist"
@@ -297,15 +297,15 @@ global W2 := ""
 global W3 := ""
 
 global X0 := "Verfasse Absage"
-global X1 := "Verfasse eine verneinende/ablehnende Antwort/Absage auf folgenden Text"
-global X2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global X1 := "Verfasse eine verneinende/ablehnende Antwort/Absage auf folgenden Text (in seiner Originalsprache, ohne Websuche)"
+global X2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Absage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global X3 := "writing"
 
 global YorZ := "Y"
 
 global Y0 := "Verfasse Zusage"
-global Y1 := "Verfasse eine bejahende/zustimmende Antwort/Zusage auf folgenden Text"
-global Y2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI!"
+global Y1 := "Verfasse eine bejahende/zustimmende Antwort/Zusage auf folgenden Text (in seiner Originalsprache, ohne Websuche)"
+global Y2 := "Antworte in meinem Namen. Behalte Sprache und Formalitätsgrad bei. Schreibe nur die Zusage, sonst nichts, auch keine Grußformel. BEHALTE DIE ORIGINALSPRACHE DES TEXTS (Z. B. DEUTSCH ODER ENGLISCH) BEI! OHNE WEBSUCHE, OHNE QUELLENANGABEN!"
 global Y3 := "writing"
 
 ; Secondary Hotkeys
@@ -415,6 +415,7 @@ global SUFFIX := ""
 
 global CapsLockHotkeys     := true    ; AI (Perplexity) Hotkeys + CapsLock Hotkeys
 global CapsLockOff         := true    ; Use CapsLock to disable CapsLock
+global Debug               := false   ; Debug mode
 global Pro                 := "auto"  ; Pro Search: auto = only for non-writing tasks, true = always, false = never
 global QueryEditor         := "tray"  ; Query Editor: tray = keep in tray, true = keep in taskbar, false = off
 global StartupHelp         := 5       ; Show help on startup: show for X seconds, 1 = keep open permanently, 0 = off
@@ -533,8 +534,6 @@ LoadCustomVariables() {
         return
     }
 
-    ;MsgBox, iniFile: %iniFile%
-
     local key, value, parts
 
     FileRead, fileContent, %iniFile%
@@ -560,6 +559,14 @@ LoadCustomVariables() {
             else
                 %key% := value
         }
+    }
+
+    if (Debug) {
+        SetTimer, ChangeButtonNames, 50
+        MsgBox, 68, AI-Hotkeys Debug, iniFile: %iniFile%
+        SetTimer, ChangeButtonNames, Off
+        IfMsgBox, Yes
+            Clipboard := iniFile
     }
 }
 
@@ -633,13 +640,16 @@ Help()
     }
 
     ; Settings
-    ;HelpText .= "`nSettings:`n"
-    ;HelpText .= "CapsLockHotkeys = " . (CapsLockHotkeys = 1 ? "true" : CapsLockHotkeys = 0 ? "false" : CapsLockHotkeys) . "`n"
-    ;HelpText .= "CapsLockOff = " . (CapsLockOff = 1 ? "true" : CapsLockOff = 0 ? "false" : CapsLockOff) . "`n"
-    ;HelpText .= "Pro = " . (Pro = 1 ? "true" : Pro = 0 ? "false" : Pro) . "`n"
-    ;HelpText .= "QueryEditor = " . (QueryEditor = 1 ? "true" : QueryEditor = 0 ? "false" : QueryEditor) . "`n"
-    ;HelpText .= "StartupHelp = " . (StartupHelp = 1 ? "true" : StartupHelp = 0 ? "false" : StartupHelp) . "`n"
-    ;HelpText .= "UseDarkTheme = " . (UseDarkTheme = 1 ? "true" : UseDarkTheme = 0 ? "false" : UseDarkTheme) . "`n"
+    if (Debug) {
+        HelpText .= "`nSettings:`n"
+        HelpText .= "CapsLockHotkeys = " . (CapsLockHotkeys = 1 ? "true" : CapsLockHotkeys = 0 ? "false" : CapsLockHotkeys) . "`n"
+        HelpText .= "CapsLockOff = " . (CapsLockOff = 1 ? "true" : CapsLockOff = 0 ? "false" : CapsLockOff) . "`n"
+        HelpText .= "Debug = " . (Debug = 1 ? "true" : Debug = 0 ? "false" : Debug) . "`n"
+        HelpText .= "Pro = " . (Pro = 1 ? "true" : Pro = 0 ? "false" : Pro) . "`n"
+        HelpText .= "QueryEditor = " . (QueryEditor = 1 ? "true" : QueryEditor = 0 ? "false" : QueryEditor) . "`n"
+        HelpText .= "StartupHelp = " . (StartupHelp = 1 ? "true" : StartupHelp = 0 ? "false" : StartupHelp) . "`n"
+        HelpText .= "UseDarkTheme = " . (UseDarkTheme = 1 ? "true" : UseDarkTheme = 0 ? "false" : UseDarkTheme) . "`n"
+    }
 
     HelpText := Trim(HelpText, "`n")
 
@@ -673,7 +683,7 @@ Help()
     Gui, Font, s10 norm
 
     Gui, Help:Add, Edit, ReadOnly w250 h%totalHeight% vHelpText -VScroll +VScroll, %HelpText%
-    Gui, Help:Add, Button, gCopyHelp w120 h30, ➡️ Clipboard
+    Gui, Help:Add, Button, gCopyHelp w120 h30, ➡️ &Clipboard
     Gui, Help:Add, Button, x+10 gCloseHelp w120 h30 +Default, % CLOSE_BUTTON_CAPTION
     Gui, Help:Show,, AI-Hotkeys Help
 
@@ -828,7 +838,9 @@ Perplexity()
 
 AI(hotkey := "", query := "")
 {
-    ;MsgBox, Hotkey: %hotkey%
+    if (Debug) {
+        MsgBox, 64, AI-Hotkeys Debug, hotkey: %hotkey%
+    }
 
     url := URL_PERPLEXITY
 
@@ -868,7 +880,13 @@ AI(hotkey := "", query := "")
         if (SUFFIX != "")
             prompt .= SUFFIX
 
-        ;MsgBox, prompt: %prompt%
+        if (Debug) {
+            SetTimer, ChangeButtonNames, 50
+            MsgBox, 68, AI-Hotkeys Debug, prompt: %prompt%
+            SetTimer, ChangeButtonNames, Off
+            IfMsgBox, Yes
+                Clipboard := prompt
+        }
 
         url .= "search?"
 
@@ -881,10 +899,18 @@ AI(hotkey := "", query := "")
         url .= "q=" . UrlEncode(prompt)
     }
 
-    ;MsgBox, url: %url%
+    if (Debug) {
+        SetTimer, ChangeButtonNames, 50
+        MsgBox, 68, AI-Hotkeys Debug, url: %url%
+        SetTimer, ChangeButtonNames, Off
+        IfMsgBox, Yes
+            Clipboard := url
+    }
 
     if (StrLen(url) > 16384) {
-        ;MsgBox, 48, 414 Request-URI Too Large, % StrLen(url) . " > 16384"
+        if (Debug) {
+            MsgBox, 48, 414 Request-URI Too Large, % StrLen(url) . " > 16384"
+        }
 
         Perplexity()
         ClipboardOld := ClipboardAll
@@ -927,7 +953,13 @@ Search(Engine)
             else
                 url := %searchUrl% . searchTerm
 
-            ;MsgBox, url: %url%
+            if (Debug) {
+                SetTimer, ChangeButtonNames, 50
+                MsgBox, 68, AI-Hotkeys Debug, url: %url%
+                SetTimer, ChangeButtonNames, Off
+                IfMsgBox, Yes
+                    Clipboard := url
+            }
 
             Run, % url
         }
@@ -1319,3 +1351,12 @@ return
 #IfWinActive
 
 #If
+
+; Debug
+ChangeButtonNames:
+    IfWinNotExist, AI-Hotkeys Debug
+        return
+    WinActivate
+    ControlSetText, Button1, ➡️ &Clipboard
+    ControlSetText, Button2, &OK
+return
